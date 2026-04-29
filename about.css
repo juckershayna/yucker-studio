@@ -1,0 +1,242 @@
+/* ABOUT */
+
+.about-intro {
+  padding-top: clamp(80px, 10vw, 140px);
+  padding-bottom: clamp(80px, 10vw, 140px);
+}
+
+.intro-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 100px;
+}
+
+.intro-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  border-top: 1px solid var(--hairline);
+  padding-top: 60px;
+}
+
+@media (max-width: 860px) {
+  .intro-body {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.intro-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.intro-col p {
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--fg-muted);
+  font-weight: 300;
+}
+
+.intro-col:first-child p {
+  font-family: var(--serif);
+  font-size: 26px;
+  line-height: 1.35;
+  color: var(--fg);
+  font-weight: 300;
+}
+
+/* TEAM */
+
+.team {
+  border-top: 1px solid var(--hairline);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+@media (max-width: 860px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 80px;
+  }
+}
+
+.member-photo {
+  aspect-ratio: 4 / 5;
+  margin-bottom: 32px;
+  transition: filter 0.5s var(--ease), transform 0.5s var(--ease);
+}
+
+.member:hover .member-photo {
+  filter: brightness(1.08);
+}
+
+.member-num {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.member-name {
+  font-family: var(--serif);
+  font-size: clamp(34px, 4vw, 52px);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+
+.member-role {
+  font-family: var(--sans);
+  font-size: 16px;
+  color: var(--gold-soft);
+  margin-bottom: 18px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.member-bio {
+  color: var(--fg-muted);
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 42ch;
+  margin-bottom: 24px;
+}
+
+.member-social {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.member-social a {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-dim);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.member-social a:hover {
+  color: var(--gold);
+}
+
+/* VALUES */
+
+.values {
+  border-top: 1px solid var(--hairline);
+}
+
+.values-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--hairline);
+}
+
+.value-row {
+  display: grid;
+  grid-template-columns: 100px 1fr 2fr;
+  gap: 40px;
+  padding: 36px 0;
+  border-bottom: 1px solid var(--hairline);
+  align-items: baseline;
+  transition: background 0.4s var(--ease);
+}
+
+@media (max-width: 860px) {
+  .value-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 28px 0;
+  }
+}
+
+.value-row:hover {
+  background: rgba(149, 123, 95, 0.02);
+}
+
+.value-num {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+}
+
+.value-title {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.value-text {
+  color: var(--fg-muted);
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 56ch;
+}
+
+/* SKILLS */
+
+.skills {
+  border-top: 1px solid var(--hairline);
+}
+
+.skills-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.skills-list li {
+  font-family: var(--sans);
+  font-size: clamp(16px, 1.6vw, 22px);
+  font-weight: 300;
+  padding: 10px 22px;
+  border: 1px solid var(--hairline-strong);
+  border-radius: 999px;
+  color: var(--fg);
+  transition: all 0.3s var(--ease);
+  cursor: default;
+  letter-spacing: 0.02em;
+}
+
+.skills-list li:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(149, 123, 95, 0.04);
+}
+
+/* CTA */
+.cta {
+  border-top: 1px solid var(--hairline);
+  text-align: center;
+}
+
+.cta-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.cta-line {
+  text-wrap: balance;
+  max-width: 14ch;
+}

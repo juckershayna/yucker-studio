@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kontakt — Yucker Studio</title>
+  <meta name="description" content="Sprich mit Yucker Studio — wir freuen uns auf dein Projekt." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="kontakt.css" />
+</head>
+<body>
+  <div class="shell">
+
+    <header class="nav">
+      <div class="container nav-inner">
+        <a href="index.html" class="logo" aria-label="Yucker Startseite">
+          <span class="logo-y">Y</span>
+          <span>Yucker <em>Studio</em></span>
+        </a>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Start</a></li>
+            <li><a href="about.html">Über uns</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="kontakt.html" class="active">Kontakt</a></li>
+          </ul>
+        </nav>
+        <a href="kontakt.html" class="nav-cta">Projekt starten <span class="arrow">→</span></a>
+        <button class="menu-toggle" aria-label="Menü"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+
+    <main>
+
+      <section class="kontakt-head">
+        <div class="container head-stack">
+          <span class="eyebrow reveal">Kontakt — Yucker Studio</span>
+          <h1 class="display reveal delay-1">
+            Erzähl uns von <em>deinem</em> Projekt.
+          </h1>
+          <p class="lead reveal delay-2">
+            Ein paar Zeilen genügen — wir melden uns innerhalb von zwei Werktagen mit einer ehrlichen Einschätzung und ersten Ideen.
+          </p>
+        </div>
+      </section>
+
+      <section class="kontakt-body">
+        <div class="container kontakt-grid">
+
+          <!-- INFO -->
+          <aside class="kontakt-info reveal">
+            <div class="info-block">
+              <h5>Studio</h5>
+              <p>
+                Yucker Studio<br />
+                Zürich · CH
+              </p>
+            </div>
+            <div class="info-block">
+              <h5>Direkt</h5>
+              <p>
+                <a href="mailto:hallo@yucker.studio">hallo@yucker.studio</a><br />
+                <a href="tel:+41441234567">+41 44 123 45 67</a>
+              </p>
+            </div>
+            <div class="info-block">
+              <h5>Öffnungszeiten</h5>
+              <p>
+                Mo–Fr · 09:00 – 18:00<br />
+                Samstag · nach Vereinbarung
+              </p>
+            </div>
+            <div class="info-block">
+              <h5>Sozial</h5>
+              <ul class="info-social">
+                <li><a href="#">Instagram <span class="arrow">↗</span></a></li>
+                <li><a href="#">LinkedIn <span class="arrow">↗</span></a></li>
+                <li><a href="#">Behance <span class="arrow">↗</span></a></li>
+                <li><a href="#">Vimeo <span class="arrow">↗</span></a></li>
+              </ul>
+            </div>
+          </aside>
+
+          <!-- FORM -->
+          <form class="kontakt-form reveal delay-1" novalidate>
+            <div class="form-row">
+              <label class="field">
+                <span class="field-label"><span class="num">01</span> Name</span>
+                <input type="text" name="name" placeholder="Vor- und Nachname" autocomplete="name" />
+              </label>
+              <label class="field">
+                <span class="field-label"><span class="num">02</span> E-Mail</span>
+                <input type="email" name="email" placeholder="dein@beispiel.ch" autocomplete="email" />
+              </label>
+            </div>
+
+            <label class="field">
+              <span class="field-label"><span class="num">03</span> Worum geht es?</span>
+              <div class="chip-row">
+                <label class="chip"><input type="checkbox" name="topic" value="branding" /><span>Branding</span></label>
+                <label class="chip"><input type="checkbox" name="topic" value="web" /><span>Webdesign</span></label>
+                <label class="chip"><input type="checkbox" name="topic" value="foto" /><span>Fotografie</span></label>
+                <label class="chip"><input type="checkbox" name="topic" value="film" /><span>Film</span></label>
+                <label class="chip"><input type="checkbox" name="topic" value="marketing" /><span>Marketing</span></label>
+                <label class="chip"><input type="checkbox" name="topic" value="interior" /><span>Interior</span></label>
+              </div>
+            </label>
+
+            <label class="field">
+              <span class="field-label"><span class="num">04</span> Deine Nachricht</span>
+              <textarea name="message" rows="6" placeholder="Was hast du vor — und wann?"></textarea>
+            </label>
+
+            <div class="form-foot">
+              <p class="form-note">Mit dem Absenden stimmst du unserer Datenschutzerklärung zu.</p>
+              <button type="submit" class="btn btn-primary">Nachricht senden <span class="arrow">→</span></button>
+            </div>
+          </form>
+
+        </div>
+      </section>
+
+      <!-- MAP STRIP -->
+      <section class="map-strip">
+        <div class="container">
+          <div class="map placeholder tone-5 reveal">
+            <span>Karte · Zürich · Yucker Studio<br />Subtile Gold-Markierung</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- OUTRO -->
+      <section class="outro">
+        <div class="container outro-inner">
+          <p class="h2 reveal">
+            <em>„</em>Wir antworten persönlich — keine Formulare, keine Floskeln. Nur ein Gespräch unter Menschen, die etwas Schönes machen wollen.<em>"</em>
+          </p>
+          <span class="outro-cite reveal delay-1">— Alisha &amp; Shayna, Yucker Studio</span>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div><p class="footer-tagline">Marken mit <em>Charakter</em> — gestaltet mit Sorgfalt.</p></div>
+          <div>
+            <h5>Studio</h5>
+            <ul>
+              <li><a href="index.html">Start</a></li>
+              <li><a href="about.html">Über uns</a></li>
+              <li><a href="portfolio.html">Portfolio</a></li>
+              <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Kontakt</h5>
+            <ul>
+              <li><a href="mailto:hallo@yucker.studio">hallo@yucker.studio</a></li>
+              <li><a href="tel:+41441234567">+41 44 123 45 67</a></li>
+              <li>Zürich · CH</li>
+            </ul>
+          </div>
+          <div>
+            <h5>Sozial</h5>
+            <ul>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">LinkedIn</a></li>
+              <li><a href="#">Behance</a></li>
+              <li><a href="#">Vimeo</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© MMXXVI Yucker Studio — Alisha Jucker &amp; Shayna Jucker</span>
+          <div class="right">
+            <span data-clock>—</span>
+            <a href="#">Impressum</a>
+            <a href="#">Datenschutz</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  <script src="shared.js"></script>
+  <script>
+    (function() {
+      const form = document.querySelector('.kontakt-form');
+      if (!form) return;
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const foot = form.querySelector('.form-foot');
+        foot.innerHTML = '<p class="form-thanks">Danke — deine Nachricht ist bei uns. Wir melden uns bald.</p>';
+      });
+    })();
+  </script>
+</body>
+</html>
