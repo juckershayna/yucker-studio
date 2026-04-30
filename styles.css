@@ -60,7 +60,6 @@ a:hover {
 
 button {
   font-family: inherit;
-  cursor: pointer;
   border: none;
   background: none;
   color: inherit;
@@ -254,7 +253,6 @@ main {
   padding: 18px 32px;
   border-radius: 999px;
   transition: all 0.4s var(--ease);
-  cursor: pointer;
   border: 1px solid transparent;
 }
 
@@ -596,4 +594,21 @@ footer {
 .y-hero.filled {
   -webkit-text-stroke: 0;
   color: var(--gold-soft);
+}
+
+/* ---- Universal Y cursor — no arrow, no hand ---- */
+*, *::before, *::after {
+  cursor: url('y-cursor.svg') 16 2, auto !important;
+}
+
+a:hover, button:hover, [role="button"]:hover,
+input[type="submit"]:hover, input[type="button"]:hover,
+input[type="checkbox"]:hover, input[type="radio"]:hover,
+label:hover, select:hover,
+.logo:hover, .nav-links a:hover, .nav-cta:hover,
+.btn:hover, .menu-toggle:hover, .filter:hover,
+.chip:hover, .service-more:hover, .project:hover,
+.member-social a:hover, .footer-grid a:hover,
+.info-social a:hover, .skills-list li:hover {
+  cursor: url('y-cursor-hover.svg') 16 2, auto !important;
 }

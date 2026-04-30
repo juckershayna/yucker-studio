@@ -213,7 +213,6 @@
   border-radius: 999px;
   color: var(--fg);
   transition: all 0.3s var(--ease);
-  cursor: default;
   letter-spacing: 0.02em;
 }
 
