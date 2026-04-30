@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="kontakt.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
   <div class="shell">
@@ -194,32 +194,25 @@
 
   </div>
   <script src="shared.js"></script>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN2GqnA=" crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
     (function() {
-      const mapEl = document.getElementById('studio-map');
-      if (mapEl) {
-        const lat = 47.3718, lng = 8.7822;
-        const map = L.map('studio-map', {
-          center: [lat, lng],
-          zoom: 16,
-          zoomControl: false,
-          scrollWheelZoom: false,
-          attributionControl: true
-        });
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
-          subdomains: 'abcd',
-          maxZoom: 19
-        }).addTo(map);
-        L.zoomControl.addTo !== undefined && L.control.zoom({ position: 'bottomright' }).addTo(map);
-        const pulse = L.divIcon({
-          className: 'map-marker',
-          iconSize: [14, 14],
-          iconAnchor: [7, 7]
-        });
-        L.marker([lat, lng], { icon: pulse }).addTo(map);
-      }
+      var mapEl = document.getElementById('studio-map');
+      if (!mapEl || typeof L === 'undefined') return;
+      var lat = 47.3718, lng = 8.7822;
+      var map = L.map('studio-map', {
+        center: [lat, lng],
+        zoom: 16,
+        scrollWheelZoom: false
+      });
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 19
+      }).addTo(map);
+      var icon = L.divIcon({ className: 'map-marker', iconSize: [14, 14], iconAnchor: [7, 7] });
+      L.marker([lat, lng], { icon: icon }).addTo(map);
+      setTimeout(function() { map.invalidateSize(); }, 400);
     })();
   </script>
   <script>
