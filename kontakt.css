@@ -248,9 +248,73 @@
   padding-bottom: clamp(60px, 8vw, 100px);
 }
 
-.map {
-  aspect-ratio: 21 / 9;
+.studio-map {
   width: 100%;
+  height: clamp(320px, 40vw, 520px);
+  border: 1px solid var(--hairline);
+}
+
+.map-label {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding-top: 20px;
+}
+
+.map-label p {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+/* Leaflet overrides — dark theme */
+.leaflet-container {
+  background: var(--bg) !important;
+  font-family: var(--mono) !important;
+}
+
+.leaflet-control-attribution {
+  background: rgba(10, 10, 10, 0.75) !important;
+  color: var(--fg-dim) !important;
+  font-family: var(--mono) !important;
+  font-size: 10px !important;
+  letter-spacing: 0.05em !important;
+  border-top: 1px solid var(--hairline) !important;
+  padding: 4px 8px !important;
+}
+
+.leaflet-control-attribution a {
+  color: var(--gold) !important;
+}
+
+.leaflet-control-zoom a {
+  background: var(--bg-elev) !important;
+  color: var(--fg-muted) !important;
+  border-color: var(--hairline-strong) !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: var(--bg-card) !important;
+  color: var(--gold) !important;
+}
+
+/* Gold pulse marker */
+.map-marker {
+  width: 14px !important;
+  height: 14px !important;
+  background: var(--gold);
+  border: 2px solid var(--gold-soft);
+  border-radius: 50%;
+  box-shadow: 0 0 12px 4px rgba(149, 123, 95, 0.5), 0 0 0 0 rgba(149, 123, 95, 0.4);
+  animation: map-pulse 2.4s ease-out infinite;
+}
+
+@keyframes map-pulse {
+  0%   { box-shadow: 0 0 12px 4px rgba(149, 123, 95, 0.5), 0 0 0 0 rgba(149, 123, 95, 0.4); }
+  70%  { box-shadow: 0 0 12px 4px rgba(149, 123, 95, 0.3), 0 0 0 18px rgba(149, 123, 95, 0); }
+  100% { box-shadow: 0 0 12px 4px rgba(149, 123, 95, 0.5), 0 0 0 0 rgba(149, 123, 95, 0); }
 }
 
 /* Outro */

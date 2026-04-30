@@ -40,7 +40,7 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
-  cursor: url('y-cursor.svg') 16 2, auto;
+  cursor: url('y-cursor.svg') 20 6, auto;
 }
 
 img {
@@ -598,7 +598,7 @@ footer {
 
 /* ---- Universal Y cursor — no arrow, no hand ---- */
 *, *::before, *::after {
-  cursor: url('y-cursor.svg') 16 2, auto !important;
+  cursor: url('y-cursor.svg') 20 6, auto !important;
 }
 
 a:hover, button:hover, [role="button"]:hover,
@@ -610,5 +610,5 @@ label:hover, select:hover,
 .chip:hover, .service-more:hover, .project:hover,
 .member-social a:hover, .footer-grid a:hover,
 .info-social a:hover, .skills-list li:hover {
-  cursor: url('y-cursor-hover.svg') 16 2, auto !important;
+  cursor: url('y-cursor-hover.svg') 20 6, auto !important;
 }
