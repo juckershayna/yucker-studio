@@ -245,7 +245,7 @@ body[data-hover="lift"] .project:hover { transform: translateY(-6px); }
 }
 
 .project-media::after {
-  content: "Projekt ansehen →";
+  content: "View Project →";
   position: absolute;
   left: 24px;
   bottom: 20px;

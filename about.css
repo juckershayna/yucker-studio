@@ -69,7 +69,8 @@
 
 .member-photo {
   aspect-ratio: 4 / 5;
-  margin-bottom: 32px;
+  width: 68%;
+  margin-bottom: 28px;
   transition: filter 0.5s var(--ease), transform 0.5s var(--ease);
 }
 

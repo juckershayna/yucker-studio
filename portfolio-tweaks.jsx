@@ -83,7 +83,7 @@ function PortfolioTweaks() {
           onChange={v => setTweak('captionStyle', v)}
           options={[
             { value: 'minimal', label: 'Minimal — Titel · Jahr' },
-            { value: 'serif',   label: 'Editorial — Titel groß' },
+            { value: 'serif',   label: 'Editorial — Titel gross' },
             { value: 'index',   label: 'Index — nummeriert' },
           ]}
         />
