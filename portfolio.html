@@ -96,7 +96,7 @@
             </a>
 
             <!-- 03 Schwarz & Weiss -->
-            <a href="#" class="project reveal" data-cat="foto">
+            <a href="#" class="project gallery-trigger reveal" data-cat="foto" data-gallery-id="bw">
               <div class="project-media">
                 <img src="assets/images/portfolio/foto-bw-1.jpg" alt="Schwarz & Weiss" loading="lazy" />
               </div>
@@ -180,7 +180,7 @@
             </a>
 
             <!-- 10 Barcelona -->
-            <a href="#" class="project reveal" data-cat="foto">
+            <a href="#" class="project gallery-trigger reveal" data-cat="foto" data-gallery-id="bcn">
               <div class="project-media">
                 <img src="assets/images/portfolio/foto-barcelona.jpg" alt="Barcelona" loading="lazy" />
               </div>
@@ -191,7 +191,19 @@
               </div>
             </a>
 
-            <!-- 11 Five Point Website -->
+            <!-- 11 Portrait -->
+            <a href="#" class="project gallery-trigger reveal delay-2" data-cat="foto" data-gallery-id="portrait">
+              <div class="project-media">
+                <img src="assets/images/portfolio/foto-bw-1.jpg" alt="Portrait" loading="lazy" />
+              </div>
+              <div class="project-meta">
+                <div class="project-cat">Photography</div>
+                <h3 class="project-title">Portrait</h3>
+                <span class="project-year">MMXXIV</span>
+              </div>
+            </a>
+
+            <!-- 12 Five Point Website -->
             <a href="https://fivepoint.ch/" target="_blank" rel="noopener" class="project reveal delay-1" data-cat="web">
               <div class="project-media">
                 <img src="assets/images/portfolio/fivepoint-web.png" alt="Five Point — Website" loading="lazy" />
@@ -331,6 +343,22 @@
 
   </div>
 
+  <!-- LIGHTBOX GALLERY -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <button class="lb-close" aria-label="Close">✕ Close</button>
+    <button class="lb-nav lb-prev" aria-label="Previous">&#8249;</button>
+    <button class="lb-nav lb-next" aria-label="Next">&#8250;</button>
+    <div class="lb-stage">
+      <div class="lb-img-wrap">
+        <img class="lb-img" src="" alt="" />
+      </div>
+      <div class="lb-bar">
+        <span class="lb-gallery-title"></span>
+        <span class="lb-counter"></span>
+      </div>
+    </div>
+  </div>
+
   <script src="shared.js"></script>
   <script type="text/babel" src="tweaks-panel.jsx"></script>
   <script type="text/babel" src="portfolio-tweaks.jsx"></script>
@@ -353,6 +381,99 @@
           });
           if (counter) counter.textContent = pad(visible);
         });
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      var galleries = {
+        bw: {
+          title: 'Schwarz & Weiss',
+          images: [
+            'assets/images/portfolio/foto-bw-1.jpg',
+            'assets/images/portfolio/foto-bw-2.jpg',
+            'assets/images/portfolio/gallery-bw-3.jpg',
+            'assets/images/portfolio/gallery-bw-4.jpg',
+            'assets/images/portfolio/gallery-bw-5.jpg',
+            'assets/images/portfolio/gallery-bw-6.jpg',
+            'assets/images/portfolio/gallery-bw-7.jpg',
+            'assets/images/portfolio/gallery-bw-8.jpg'
+          ]
+        },
+        bcn: {
+          title: 'Barcelona',
+          images: [
+            'assets/images/portfolio/foto-barcelona.jpg',
+            'assets/images/portfolio/gallery-bcn-2.jpg',
+            'assets/images/portfolio/gallery-bcn-3.jpg',
+            'assets/images/portfolio/gallery-bcn-4.jpg'
+          ]
+        },
+        portrait: {
+          title: 'Portrait',
+          images: [
+            'assets/images/portfolio/foto-bw-1.jpg',
+            'assets/images/portfolio/foto-bw-2.jpg',
+            'assets/images/portfolio/gallery-portrait-2.jpg',
+            'assets/images/portfolio/gallery-portrait-3.jpg'
+          ]
+        }
+      };
+
+      var current = null;
+      var idx = 0;
+      var lb = document.getElementById('lightbox');
+      var lbImg = lb.querySelector('.lb-img');
+      var lbTitle = lb.querySelector('.lb-gallery-title');
+      var lbCounter = lb.querySelector('.lb-counter');
+
+      function open(id) {
+        current = galleries[id];
+        idx = 0;
+        lb.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        show(0);
+      }
+
+      function close() {
+        lb.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      function show(i) {
+        idx = i;
+        lbImg.classList.add('fading');
+        var src = current.images[i];
+        var tmp = new Image();
+        tmp.onload = function () {
+          lbImg.src = src;
+          lbImg.classList.remove('fading');
+        };
+        tmp.src = src;
+        lbTitle.textContent = current.title;
+        lbCounter.textContent = (i + 1) + ' / ' + current.images.length;
+      }
+
+      function prev() { show((idx - 1 + current.images.length) % current.images.length); }
+      function next() { show((idx + 1) % current.images.length); }
+
+      document.querySelectorAll('.gallery-trigger').forEach(function (el) {
+        el.addEventListener('click', function (e) {
+          e.preventDefault();
+          open(el.dataset.galleryId);
+        });
+      });
+
+      lb.querySelector('.lb-close').addEventListener('click', close);
+      lb.querySelector('.lb-prev').addEventListener('click', function (e) { e.stopPropagation(); prev(); });
+      lb.querySelector('.lb-next').addEventListener('click', function (e) { e.stopPropagation(); next(); });
+      lb.addEventListener('click', function (e) { if (e.target === lb || e.target === lb.querySelector('.lb-stage')) close(); });
+
+      document.addEventListener('keydown', function (e) {
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowLeft') prev();
+        if (e.key === 'ArrowRight') next();
       });
     })();
   </script>

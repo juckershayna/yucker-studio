@@ -360,3 +360,102 @@ body[data-hover="lift"] .project:hover { transform: translateY(-6px); }
   text-wrap: balance;
   max-width: 14ch;
 }
+
+/* ---------- GALLERY TRIGGER ---------- */
+.gallery-trigger { cursor: pointer; }
+.gallery-trigger .project-media::after { content: "Open Gallery →"; }
+
+/* ---------- LIGHTBOX ---------- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 4, 4, 0.97);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s var(--ease);
+}
+.lightbox.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.lb-close {
+  position: absolute;
+  top: 28px;
+  right: 36px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--fg-dim);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  transition: color 0.3s;
+}
+.lb-close:hover { color: var(--gold); }
+.lb-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--serif);
+  font-size: 64px;
+  font-weight: 200;
+  color: rgba(255,255,255,0.2);
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  padding: 24px 28px;
+  transition: color 0.3s var(--ease);
+  user-select: none;
+}
+.lb-nav:hover { color: var(--gold); }
+.lb-prev { left: 0; }
+.lb-next { right: 0; }
+.lb-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: calc(100vw - 180px);
+  max-height: calc(100vh - 80px);
+}
+.lb-img-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-height: 0;
+}
+.lb-img {
+  max-width: 100%;
+  max-height: calc(100vh - 160px);
+  object-fit: contain;
+  display: block;
+  transition: opacity 0.25s var(--ease);
+}
+.lb-img.fading { opacity: 0; }
+.lb-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.lb-gallery-title { color: var(--gold-soft); }
+.lb-counter { color: var(--fg-dim); }
+
+@media (max-width: 768px) {
+  .lb-nav { font-size: 44px; padding: 16px 20px; }
+  .lb-stage { max-width: calc(100vw - 100px); }
+  .lb-close { top: 16px; right: 20px; }
+  .lb-img { max-height: calc(100vh - 140px); }
+}
