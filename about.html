@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,68 +22,59 @@
         </a>
         <nav>
           <ul class="nav-links">
-            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="about.html" class="active"><span class="en">About</span><span class="de">Über uns</span></a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="kontakt.html">Contact</a></li>
+            <li><a href="kontakt.html"><span class="en">Contact</span><span class="de">Kontakt</span></a></li>
           </ul>
         </nav>
-        <a href="kontakt.html" class="nav-cta">Start a Project <span class="arrow">→</span></a>
+        <div class="lang-switcher">
+          <button class="lang-btn" data-lang="en">EN</button>
+          <span class="lang-sep">|</span>
+          <button class="lang-btn" data-lang="de">DE</button>
+        </div>
+        <a href="kontakt.html" class="nav-cta"><span class="en">Start a Project</span><span class="de">Projekt starten</span> <span class="arrow">→</span></a>
         <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
       </div>
     </header>
 
     <main>
 
-      <!-- INTRO -->
       <section class="about-intro">
         <div class="container intro-stack">
-          <span class="eyebrow reveal">About — aly + shay Studio</span>
+          <span class="eyebrow reveal"><span class="en">About — aly + shay Studio</span><span class="de">Über uns — aly + shay Studio</span></span>
           <h1 class="display reveal delay-1">
-            Two Heads.<br />
-            One <em>Voice.</em>
+            <span class="en">Two Heads.<br />One <em>Voice.</em></span>
+            <span class="de">Zwei Köpfe.<br />Eine <em>Stimme.</em></span>
           </h1>
         </div>
-
         <div class="container intro-body">
           <div class="intro-col reveal delay-2">
-            <p>
-              aly + shay Studio is a small, intentional design studio in Zurich. We work at the intersection of brand strategy, design, and visual storytelling — turning good ideas into something lasting.
-            </p>
+            <p><span class="en">aly + shay Studio is a small, intentional design studio in Zurich. We work at the intersection of brand strategy, design, and visual storytelling — turning good ideas into something lasting.</span><span class="de">aly + shay Studio ist ein kleines, bewusstes Designstudio in Zürich. Wir arbeiten an der Schnittstelle von Markenstrategie, Design und visuellem Storytelling — und verwandeln gute Ideen in etwas Bleibendes.</span></p>
           </div>
           <div class="intro-col reveal delay-3">
-            <p>
-              We believe in care over speed, substance over trend, and brands that genuinely mean something. Every project is handmade, every detail a decision.
-            </p>
-            <p>
-              What carries us is a mix of conceptual precision and an eye for atmosphere — from the typography on a business card to the lighting concept of a room.
-            </p>
+            <p><span class="en">We believe in care over speed, substance over trend, and brands that genuinely mean something. Every project is handmade, every detail a decision.</span><span class="de">Wir glauben an Sorgfalt statt Schnelligkeit, Substanz statt Trend, und Marken, die wirklich etwas bedeuten. Jedes Projekt ist handgemacht, jedes Detail eine Entscheidung.</span></p>
+            <p><span class="en">What carries us is a mix of conceptual precision and an eye for atmosphere — from the typography on a business card to the lighting concept of a room.</span><span class="de">Was uns trägt, ist eine Mischung aus konzeptioneller Präzision und einem Gespür für Atmosphäre — von der Typografie auf einer Visitenkarte bis zum Lichtkonzept eines Raums.</span></p>
           </div>
         </div>
       </section>
 
-      <!-- TEAM -->
       <section class="team">
         <div class="container">
           <div class="section-head">
             <div class="meta">
-              <span class="eyebrow reveal">The Team</span>
-              <h2 class="h1 reveal delay-1">The People <em>Behind</em> aly + shay.</h2>
+              <span class="eyebrow reveal"><span class="en">The Team</span><span class="de">Das Team</span></span>
+              <h2 class="h1 reveal delay-1"><span class="en">The People <em>Behind</em> aly + shay.</span><span class="de">Die Menschen <em>hinter</em> aly + shay.</span></h2>
             </div>
-            <p class="lede reveal delay-2">
-              Working side by side — sharing the same commitment to quality, clarity and an honest approach to design.
-            </p>
+            <p class="lede reveal delay-2"><span class="en">Working side by side — sharing the same commitment to quality, clarity and an honest approach to design.</span><span class="de">Seite an Seite — mit demselben Anspruch an Qualität, Klarheit und einem ehrlichen Zugang zu Design.</span></p>
           </div>
 
           <div class="team-grid">
-
             <article class="member reveal">
               <div class="member-photo placeholder tone-3" aria-label="Portrait Alisha Jucker"></div>
               <div class="member-meta">
                 <h3 class="member-name">Alisha Jucker</h3>
-                <p class="member-role">Founder &amp; Branding Lead</p>
-                <p class="member-bio">
-                  Alisha leads brand strategy, identity, and graphic design. She thinks from the inside out — searching in every project for the one gesture that carries everything.
-                </p>
+                <p class="member-role"><span class="en">Founder &amp; Branding Lead</span><span class="de">Gründerin &amp; Branding Lead</span></p>
+                <p class="member-bio"><span class="en">Alisha leads brand strategy, identity, and graphic design. She thinks from the inside out — searching in every project for the one gesture that carries everything.</span><span class="de">Alisha leitet Markenstrategie, Identität und Grafikdesign. Sie denkt von innen nach aussen — und sucht in jedem Projekt nach der einen Geste, die alles trägt.</span></p>
                 <ul class="member-social">
                   <li><a href="#">Instagram <span class="arrow">↗</span></a></li>
                   <li><a href="#">LinkedIn <span class="arrow">↗</span></a></li>
@@ -97,10 +88,8 @@
               </div>
               <div class="member-meta">
                 <h3 class="member-name">Shayna Jucker</h3>
-                <p class="member-role">Founder &amp; Creative Direction</p>
-                <p class="member-bio">
-                  Shayna connects concept and visual language — from web design to photography, film, and spatial staging. One voice, many disciplines.
-                </p>
+                <p class="member-role"><span class="en">Founder &amp; Creative Direction</span><span class="de">Gründerin &amp; Kreative Leitung</span></p>
+                <p class="member-bio"><span class="en">Shayna connects concept and visual language — from web design to photography, film, and spatial staging. One voice, many disciplines.</span><span class="de">Shayna verbindet Konzept und Bildsprache — von Web Design über Fotografie und Film bis zur räumlichen Inszenierung. Eine Stimme, viele Disziplinen.</span></p>
                 <ul class="member-social">
                   <li><a href="#">Instagram <span class="arrow">↗</span></a></li>
                   <li><a href="#">LinkedIn <span class="arrow">↗</span></a></li>
@@ -112,10 +101,8 @@
               <div class="member-photo placeholder tone-1" aria-label="Portrait Marion Guler"></div>
               <div class="member-meta">
                 <h3 class="member-name">Marion Guler</h3>
-                <p class="member-role">Studio Manager</p>
-                <p class="member-bio">
-                  Marion brings structure to the studio's daily workflow and ensures every project runs exactly as it should — smoothly, reliably, with an eye on the whole.
-                </p>
+                <p class="member-role"><span class="en">Studio Manager</span><span class="de">Studio-Managerin</span></p>
+                <p class="member-bio"><span class="en">Marion brings structure to the studio's daily workflow and ensures every project runs exactly as it should — smoothly, reliably, with an eye on the whole.</span><span class="de">Marion bringt Struktur in den täglichen Ablauf des Studios und sorgt dafür, dass jedes Projekt genau so läuft, wie es soll — reibungslos, zuverlässig, mit dem Blick fürs Ganze.</span></p>
                 <ul class="member-social">
                   <li><a href="#">Instagram <span class="arrow">↗</span></a></li>
                   <li><a href="#">LinkedIn <span class="arrow">↗</span></a></li>
@@ -124,83 +111,75 @@
             </article>
 
             <article class="member reveal delay-3">
-              <div class="member-photo placeholder tone-4" aria-label="Penny the studio cat">
-              </div>
+              <div class="member-photo placeholder tone-4" aria-label="Penny the studio cat"></div>
               <div class="member-meta">
                 <h3 class="member-name">Penny</h3>
                 <p class="member-role">Chief Mood Officer</p>
-                <p class="member-bio">
-                  Penny is responsible for studio atmosphere. She reviews designs by sitting on them deliberately, approves breaks with a glance, and reminds us daily that the most important things don't always happen on screen.
-                </p>
+                <p class="member-bio"><span class="en">Penny is responsible for studio atmosphere. She reviews designs by sitting on them deliberately, approves breaks with a glance, and reminds us daily that the most important things don't always happen on screen.</span><span class="de">Penny ist zuständig für die Studioatmosphäre. Sie begutachtet Designs, indem sie sich bewusst daraufsetzt, genehmigt Pausen mit einem Blick und erinnert uns täglich daran, dass das Wichtigste nicht immer auf dem Bildschirm passiert.</span></p>
               </div>
             </article>
-
           </div>
         </div>
       </section>
 
-      <!-- VALUES -->
       <section class="values">
         <div class="container">
           <div class="section-head">
             <div class="meta">
-              <span class="eyebrow reveal">Values</span>
-              <h2 class="h1 reveal delay-1">What We <em>Stand For.</em></h2>
+              <span class="eyebrow reveal"><span class="en">Values</span><span class="de">Werte</span></span>
+              <h2 class="h1 reveal delay-1"><span class="en">What We <em>Stand For.</em></span><span class="de">Wofür wir <em>stehen.</em></span></h2>
             </div>
           </div>
-
           <div class="values-list">
             <div class="value-row reveal">
               <div class="value-num">01</div>
-              <div class="value-title">Care</div>
-              <p class="value-text">Better one detail more considered than one less. Design lives through decisions no one sees — and everyone feels.</p>
+              <div class="value-title"><span class="en">Care</span><span class="de">Sorgfalt</span></div>
+              <p class="value-text"><span class="en">Better one detail more considered than one less. Design lives through decisions no one sees — and everyone feels.</span><span class="de">Lieber ein Detail mehr bedacht als eines weniger. Design lebt durch Entscheidungen, die niemand sieht — und alle spüren.</span></p>
             </div>
             <div class="value-row reveal delay-1">
               <div class="value-num">02</div>
-              <div class="value-title">Clarity</div>
-              <p class="value-text">Reduction is not a style, but a method. We refine the essential until nothing superfluous remains.</p>
+              <div class="value-title"><span class="en">Clarity</span><span class="de">Klarheit</span></div>
+              <p class="value-text"><span class="en">Reduction is not a style, but a method. We refine the essential until nothing superfluous remains.</span><span class="de">Reduktion ist kein Stil, sondern eine Methode. Wir verfeinern das Wesentliche, bis nichts Überflüssiges mehr bleibt.</span></p>
             </div>
             <div class="value-row reveal delay-2">
               <div class="value-num">03</div>
-              <div class="value-title">Character</div>
-              <p class="value-text">We don't design interchangeable identities. Every brand has its own frequency — our task is to make it visible.</p>
+              <div class="value-title"><span class="en">Character</span><span class="de">Charakter</span></div>
+              <p class="value-text"><span class="en">We don't design interchangeable identities. Every brand has its own frequency — our task is to make it visible.</span><span class="de">Wir gestalten keine austauschbaren Identitäten. Jede Marke hat ihre eigene Frequenz — unsere Aufgabe ist es, sie sichtbar zu machen.</span></p>
             </div>
             <div class="value-row reveal delay-3">
               <div class="value-num">04</div>
-              <div class="value-title">Commitment</div>
-              <p class="value-text">Promised deadlines, honest assessments, transparent processes. Trust is the most important design decision.</p>
+              <div class="value-title"><span class="en">Commitment</span><span class="de">Verlässlichkeit</span></div>
+              <p class="value-text"><span class="en">Promised deadlines, honest assessments, transparent processes. Trust is the most important design decision.</span><span class="de">Versprochene Deadlines, ehrliche Einschätzungen, transparente Prozesse. Vertrauen ist die wichtigste Designentscheidung.</span></p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- SKILLS -->
       <section class="skills">
         <div class="container">
-          <h3 class="eyebrow reveal">Skills</h3>
+          <h3 class="eyebrow reveal"><span class="en">Skills</span><span class="de">Fähigkeiten</span></h3>
           <ul class="skills-list reveal delay-1">
-            <li>Brand Strategy</li>
-            <li>Visual Identity</li>
+            <li><span class="en">Brand Strategy</span><span class="de">Markenstrategie</span></li>
+            <li><span class="en">Visual Identity</span><span class="de">Visuelle Identität</span></li>
             <li>Editorial &amp; Print</li>
             <li>UX / UI</li>
-            <li>Web Development</li>
+            <li><span class="en">Web Development</span><span class="de">Web-Entwicklung</span></li>
             <li>Art Direction</li>
-            <li>Photography</li>
+            <li><span class="en">Photography</span><span class="de">Fotografie</span></li>
             <li>Film &amp; Video</li>
             <li>Social Media</li>
-            <li>Campaigns</li>
-            <li>Interior Design</li>
-            <li>Materials &amp; Light</li>
+            <li><span class="en">Campaigns</span><span class="de">Kampagnen</span></li>
+            <li><span class="en">Interior Design</span><span class="de">Innenarchitektur</span></li>
+            <li><span class="en">Materials &amp; Light</span><span class="de">Materialien &amp; Licht</span></li>
           </ul>
         </div>
       </section>
 
-      <!-- CTA -->
       <section class="cta">
         <div class="container cta-inner">
-          <p class="eyebrow reveal">Get in Touch</p>
-          <h2 class="display cta-line reveal delay-1">Let's <em>Talk.</em></h2>
-          <a href="kontakt.html" class="btn btn-primary reveal delay-2">Get in Touch <span class="arrow">→</span></a>
+          <p class="eyebrow reveal"><span class="en">Get in Touch</span><span class="de">Kontakt</span></p>
+          <h2 class="display cta-line reveal delay-1"><span class="en">Let's <em>Talk.</em></span><span class="de">Lass uns <em>sprechen.</em></span></h2>
+          <a href="kontakt.html" class="btn btn-primary reveal delay-2"><span class="en">Get in Touch</span><span class="de">Kontakt aufnehmen</span> <span class="arrow">→</span></a>
         </div>
       </section>
 
@@ -209,18 +188,18 @@
     <footer>
       <div class="container">
         <div class="footer-grid">
-          <div><p class="footer-tagline">Brands with <em>character</em> — crafted with care.</p></div>
+          <div><p class="footer-tagline"><span class="en">Brands with <em>character</em> — crafted with care.</span><span class="de">Marken mit <em>Charakter</em> — mit Sorgfalt gestaltet.</span></p></div>
           <div>
             <h5>Studio</h5>
             <ul>
               <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
+              <li><a href="about.html"><span class="en">About</span><span class="de">Über uns</span></a></li>
               <li><a href="portfolio.html">Portfolio</a></li>
-              <li><a href="kontakt.html">Contact</a></li>
+              <li><a href="kontakt.html"><span class="en">Contact</span><span class="de">Kontakt</span></a></li>
             </ul>
           </div>
           <div>
-            <h5>Contact</h5>
+            <h5><span class="en">Contact</span><span class="de">Kontakt</span></h5>
             <ul>
               <li><a href="mailto:info@alyandshay.studio">info@alyandshay.studio</a></li>
               <li><a href="tel:+41762820513">Aly +41 76 282 05 13</a></li>
@@ -241,7 +220,7 @@
           <div class="right">
             <span data-clock>—</span>
             <a href="impressum.html">Impressum</a>
-            <a href="datenschutz.html">Privacy Policy</a>
+            <a href="datenschutz.html"><span class="en">Privacy Policy</span><span class="de">Datenschutz</span></a>
           </div>
         </div>
       </div>
@@ -249,5 +228,6 @@
 
   </div>
   <script src="shared.js"></script>
+  <script src="i18n.js"></script>
 </body>
 </html>

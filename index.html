@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,12 +22,17 @@
         </a>
         <nav>
           <ul class="nav-links">
-            <li><a href="about.html">About</a></li>
+            <li><a href="about.html"><span class="en">About</span><span class="de">Über uns</span></a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="kontakt.html">Contact</a></li>
+            <li><a href="kontakt.html"><span class="en">Contact</span><span class="de">Kontakt</span></a></li>
           </ul>
         </nav>
-        <a href="kontakt.html" class="nav-cta">Start a Project <span class="arrow">→</span></a>
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <span class="lang-sep">|</span>
+          <button class="lang-btn" data-lang="de">DE</button>
+        </div>
+        <a href="kontakt.html" class="nav-cta"><span class="en">Start a Project</span><span class="de">Projekt starten</span> <span class="arrow">→</span></a>
         <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
       </div>
     </header>
@@ -50,28 +55,30 @@
             </div>
             <div class="y-tag y-tag-bl">
               <span class="dot"></span>
-              <span>06 Disciplines</span>
+              <span><span class="en">06 Disciplines</span><span class="de">06 Disziplinen</span></span>
             </div>
             <div class="y-tag y-tag-br">
-              <span>Since MMXXV</span>
+              <span><span class="en">Since MMXXV</span><span class="de">Seit MMXXV</span></span>
               <span class="dot"></span>
             </div>
           </div>
 
           <div class="hero-words">
-            <span class="eyebrow reveal">Design Studio</span>
+            <span class="eyebrow reveal"><span class="en">Design Studio</span><span class="de">Design Studio</span></span>
             <h1 class="display hero-title reveal delay-1">
-              Design. <em>Strategy.</em><br />Impact.
+              <span class="en">Design. <em>Strategy.</em><br />Impact.</span>
+              <span class="de">Design. <em>Strategie.</em><br />Wirkung.</span>
             </h1>
           </div>
 
           <div class="hero-foot">
             <p class="lead reveal delay-2">
-              We design brands that endure — from the first idea to the last pixel. Six disciplines, one handwriting.
+              <span class="en">We design brands that endure — from the first idea to the last pixel. Six disciplines, one handwriting.</span>
+              <span class="de">Wir gestalten Marken, die bleiben — von der ersten Idee bis zum letzten Pixel. Sechs Disziplinen, eine Handschrift.</span>
             </p>
             <div class="hero-actions reveal delay-3">
-              <a href="kontakt.html" class="btn btn-primary">Start a Project <span class="arrow">→</span></a>
-              <a href="portfolio.html" class="btn btn-ghost">View Work</a>
+              <a href="kontakt.html" class="btn btn-primary"><span class="en">Start a Project</span><span class="de">Projekt starten</span> <span class="arrow">→</span></a>
+              <a href="portfolio.html" class="btn btn-ghost"><span class="en">View Work</span><span class="de">Arbeiten ansehen</span></a>
             </div>
           </div>
         </div>
@@ -84,13 +91,13 @@
             <div class="strip-media">
               <img src="assets/images/portfolio/interior-cataleya.jpg" alt="Cataleya Interior" loading="lazy" />
             </div>
-            <div class="strip-cap"><span class="cap-num">001</span><span>Cataleya · Interior</span></div>
+            <div class="strip-cap"><span class="cap-num">001</span><span>Cataleya · <span class="en">Interior</span><span class="de">Interieur</span></span></div>
           </a>
           <a href="portfolio.html" class="strip-item tall reveal delay-1">
             <div class="strip-media">
               <img src="assets/images/portfolio/foto-bw-1.jpg" alt="Schwarz &amp; Weiss Photography" loading="lazy" />
             </div>
-            <div class="strip-cap"><span class="cap-num">002</span><span>Schwarz &amp; Weiss · Photography</span></div>
+            <div class="strip-cap"><span class="cap-num">002</span><span>Schwarz &amp; Weiss · <span class="en">Photography</span><span class="de">Fotografie</span></span></div>
           </a>
           <a href="portfolio.html" class="strip-item reveal delay-2">
             <div class="strip-media">
@@ -105,11 +112,12 @@
       <section class="intro-strip">
         <div class="container intro-grid">
           <div class="reveal">
-            <span class="eyebrow">What We Do</span>
+            <span class="eyebrow"><span class="en">What We Do</span><span class="de">Was wir tun</span></span>
           </div>
           <div class="reveal delay-1">
             <p class="h2 intro-statement">
-              A studio for <em>holistic</em> brand craft — from identity and presence to image, motion, and physical space.
+              <span class="en">A studio for <em>holistic</em> brand craft — from identity and presence to image, motion, and physical space.</span>
+              <span class="de">Ein Studio für <em>ganzheitliche</em> Markenarbeit — von Identität und Präsenz bis zu Bild, Bewegtbild und Raum.</span>
             </p>
           </div>
         </div>
@@ -120,11 +128,15 @@
         <div class="container">
           <div class="section-head">
             <div class="meta">
-              <span class="eyebrow reveal">Services</span>
-              <h2 class="h1 reveal delay-1">What We <em>Love</em> Doing.</h2>
+              <span class="eyebrow reveal"><span class="en">Services</span><span class="de">Leistungen</span></span>
+              <h2 class="h1 reveal delay-1">
+                <span class="en">What We <em>Love</em> Doing.</span>
+                <span class="de">Was wir gerne <em>tun.</em></span>
+              </h2>
             </div>
             <p class="lede reveal delay-2">
-              Each discipline stands on its own — and is most powerful in combination.
+              <span class="en">Each discipline stands on its own — and is most powerful in combination.</span>
+              <span class="de">Jede Disziplin steht für sich — und entfaltet ihre Stärke in der Kombination.</span>
             </p>
           </div>
 
@@ -132,44 +144,80 @@
             <article class="service reveal">
               <div class="service-num">01</div>
               <h3 class="service-title">Branding &amp; Graphic Design</h3>
-              <p class="service-tag">Your brand — expressed with precision.</p>
-              <p class="service-body">We develop cohesive, strong brand identities: from logo and colour systems to print and digital design. Authenticity is central — so that your presence truly reflects who you are.</p>
-              <a href="#" class="service-more">Learn more <span class="arrow">→</span></a>
+              <p class="service-tag">
+                <span class="en">Your brand — expressed with precision.</span>
+                <span class="de">Deine Marke — präzise ausgedrückt.</span>
+              </p>
+              <p class="service-body">
+                <span class="en">We develop cohesive, strong brand identities: from logo and colour systems to print and digital design. Authenticity is central — so that your presence truly reflects who you are.</span>
+                <span class="de">Wir entwickeln kohärente, starke Markenidentitäten: vom Logo und Farbsystem bis zum Print- und Digitaldesign. Authentizität steht im Mittelpunkt — damit dein Auftritt wirklich widerspiegelt, wer du bist.</span>
+              </p>
+              <a href="service-branding.html" class="service-more"><span class="en">Learn more</span><span class="de">Mehr erfahren</span> <span class="arrow">→</span></a>
             </article>
             <article class="service reveal delay-1">
               <div class="service-num">02</div>
               <h3 class="service-title">Web Design</h3>
-              <p class="service-tag">Modern websites that work.</p>
-              <p class="service-body">We design and build bespoke websites that are not only visually compelling but also functional and user-friendly. From concept to launch — everything from one studio.</p>
-              <a href="#" class="service-more">Learn more <span class="arrow">→</span></a>
+              <p class="service-tag">
+                <span class="en">Modern websites that work.</span>
+                <span class="de">Moderne Websites, die funktionieren.</span>
+              </p>
+              <p class="service-body">
+                <span class="en">We design and build bespoke websites that are not only visually compelling but also functional and user-friendly. From concept to launch — everything from one studio.</span>
+                <span class="de">Wir gestalten und entwickeln massgeschneiderte Websites, die nicht nur visuell überzeugen, sondern auch funktional und benutzerfreundlich sind. Vom Konzept bis zum Launch — alles aus einem Studio.</span>
+              </p>
+              <a href="service-web.html" class="service-more"><span class="en">Learn more</span><span class="de">Mehr erfahren</span> <span class="arrow">→</span></a>
             </article>
             <article class="service reveal delay-2">
               <div class="service-num">03</div>
-              <h3 class="service-title">Photography</h3>
-              <p class="service-tag">Images that tell stories.</p>
-              <p class="service-body">Whether for websites, social media, or campaigns — we create professional, emotive images that perfectly reflect your brand or personality.</p>
-              <a href="#" class="service-more">Learn more <span class="arrow">→</span></a>
+              <h3 class="service-title"><span class="en">Photography</span><span class="de">Fotografie</span></h3>
+              <p class="service-tag">
+                <span class="en">Images that tell stories.</span>
+                <span class="de">Bilder, die Geschichten erzählen.</span>
+              </p>
+              <p class="service-body">
+                <span class="en">Whether for websites, social media, or campaigns — we create professional, emotive images that perfectly reflect your brand or personality.</span>
+                <span class="de">Ob für Websites, Social Media oder Kampagnen — wir erschaffen professionelle, emotionale Bilder, die deine Marke oder Persönlichkeit perfekt widerspiegeln.</span>
+              </p>
+              <a href="service-photography.html" class="service-more"><span class="en">Learn more</span><span class="de">Mehr erfahren</span> <span class="arrow">→</span></a>
             </article>
             <article class="service reveal">
               <div class="service-num">04</div>
               <h3 class="service-title">Film &amp; Video</h3>
-              <p class="service-tag">Moving image that resonates.</p>
-              <p class="service-body">We produce short, modern videos for brands, products, and social media. From storyboard through shoot to edit — with an eye for detail and a feeling for atmosphere.</p>
-              <a href="#" class="service-more">Learn more <span class="arrow">→</span></a>
+              <p class="service-tag">
+                <span class="en">Moving image that resonates.</span>
+                <span class="de">Bewegtbild, das bewegt.</span>
+              </p>
+              <p class="service-body">
+                <span class="en">We produce short, modern videos for brands, products, and social media. From storyboard through shoot to edit — with an eye for detail and a feeling for atmosphere.</span>
+                <span class="de">Wir produzieren kurze, moderne Videos für Marken, Produkte und Social Media. Vom Storyboard über den Dreh bis zum Schnitt — mit einem Auge für Details und einem Gespür für Atmosphäre.</span>
+              </p>
+              <a href="service-film.html" class="service-more"><span class="en">Learn more</span><span class="de">Mehr erfahren</span> <span class="arrow">→</span></a>
             </article>
             <article class="service reveal delay-1">
               <div class="service-num">05</div>
               <h3 class="service-title">Marketing &amp; Social Media</h3>
-              <p class="service-tag">Strategic. Creative. Visible.</p>
-              <p class="service-body">We support your online presence — from content ideas and social media strategy to paid advertising. The goal: make your brand visible and build it for the long term.</p>
-              <a href="#" class="service-more">Learn more <span class="arrow">→</span></a>
+              <p class="service-tag">
+                <span class="en">Strategic. Creative. Visible.</span>
+                <span class="de">Strategisch. Kreativ. Sichtbar.</span>
+              </p>
+              <p class="service-body">
+                <span class="en">We support your online presence — from content ideas and social media strategy to paid advertising. The goal: make your brand visible and build it for the long term.</span>
+                <span class="de">Wir unterstützen deinen Online-Auftritt — von Content-Ideen und Social-Media-Strategie bis zur bezahlten Werbung. Das Ziel: deine Marke sichtbar machen und langfristig aufbauen.</span>
+              </p>
+              <a href="service-marketing.html" class="service-more"><span class="en">Learn more</span><span class="de">Mehr erfahren</span> <span class="arrow">→</span></a>
             </article>
             <article class="service reveal delay-2">
               <div class="service-num">06</div>
-              <h3 class="service-title">Interior Design</h3>
-              <p class="service-tag">Spaces that make an impression.</p>
-              <p class="service-body">We develop considered interior concepts that unite aesthetics and function — moodboards, colour and material palettes, furniture and lighting plans, all the way to full spatial staging.</p>
-              <a href="#" class="service-more">Learn more <span class="arrow">→</span></a>
+              <h3 class="service-title"><span class="en">Interior Design</span><span class="de">Innenarchitektur</span></h3>
+              <p class="service-tag">
+                <span class="en">Spaces that make an impression.</span>
+                <span class="de">Räume, die im Gedächtnis bleiben.</span>
+              </p>
+              <p class="service-body">
+                <span class="en">We develop considered interior concepts that unite aesthetics and function — moodboards, colour and material palettes, furniture and lighting plans, all the way to full spatial staging.</span>
+                <span class="de">Wir entwickeln durchdachte Innenraumkonzepte, die Ästhetik und Funktion vereinen — Moodboards, Farb- und Materialpaletten, Möbel- und Lichtpläne bis hin zur vollständigen Raumgestaltung.</span>
+              </p>
+              <a href="service-interior.html" class="service-more"><span class="en">Learn more</span><span class="de">Mehr erfahren</span> <span class="arrow">→</span></a>
             </article>
           </div>
         </div>
@@ -182,8 +230,11 @@
             <img src="assets/images/portfolio/interior-gradus.jpg" alt="Gradus — Raumkonzept" style="width:100%;height:auto;display:block;" loading="lazy" />
           </div>
           <div class="featured-meta">
-            <span class="eyebrow reveal">Featured</span>
-            <h3 class="h2 reveal delay-1">Gradus — an identity in <em>material</em> and light.</h3>
+            <span class="eyebrow reveal"><span class="en">Featured</span><span class="de">Ausgewählt</span></span>
+            <h3 class="h2 reveal delay-1">
+              <span class="en">Gradus — an identity in <em>material</em> and light.</span>
+              <span class="de">Gradus — eine Identität in <em>Material</em> und Licht.</span>
+            </h3>
           </div>
         </div>
       </section>
@@ -194,19 +245,19 @@
           <div class="numbers-grid">
             <div class="reveal">
               <div class="num-figure">01<span>+</span></div>
-              <div class="num-label">Years of Experience</div>
+              <div class="num-label"><span class="en">Years of Experience</span><span class="de">Jahre Erfahrung</span></div>
             </div>
             <div class="reveal delay-1">
               <div class="num-figure">120<span>+</span></div>
-              <div class="num-label">Projects Realised</div>
+              <div class="num-label"><span class="en">Projects Realised</span><span class="de">Projekte realisiert</span></div>
             </div>
             <div class="reveal delay-2">
               <div class="num-figure">06</div>
-              <div class="num-label">Disciplines Under One Roof</div>
+              <div class="num-label"><span class="en">Disciplines Under One Roof</span><span class="de">Disziplinen unter einem Dach</span></div>
             </div>
             <div class="reveal delay-3">
               <div class="num-figure">02</div>
-              <div class="num-label">Heads, One Handwriting</div>
+              <div class="num-label"><span class="en">Heads, One Handwriting</span><span class="de">Köpfe, eine Handschrift</span></div>
             </div>
           </div>
         </div>
@@ -215,11 +266,12 @@
       <!-- CTA -->
       <section class="cta">
         <div class="container cta-inner">
-          <p class="eyebrow reveal">Get in Touch</p>
+          <p class="eyebrow reveal"><span class="en">Get in Touch</span><span class="de">Kontakt</span></p>
           <h2 class="display cta-line reveal delay-1">
-            Ready to create something <em>lasting?</em>
+            <span class="en">Ready to create something <em>lasting?</em></span>
+            <span class="de">Bereit, etwas <em>Bleibendes</em> zu erschaffen?</span>
           </h2>
-          <a href="kontakt.html" class="btn btn-primary reveal delay-2">Start a Project <span class="arrow">→</span></a>
+          <a href="kontakt.html" class="btn btn-primary reveal delay-2"><span class="en">Start a Project</span><span class="de">Projekt starten</span> <span class="arrow">→</span></a>
         </div>
       </section>
 
@@ -229,19 +281,19 @@
       <div class="container">
         <div class="footer-grid">
           <div>
-            <p class="footer-tagline">Brands with <em>character</em> — crafted with care.</p>
+            <p class="footer-tagline"><span class="en">Brands with <em>character</em> — crafted with care.</span><span class="de">Marken mit <em>Charakter</em> — mit Sorgfalt gestaltet.</span></p>
           </div>
           <div>
             <h5>Studio</h5>
             <ul>
               <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
+              <li><a href="about.html"><span class="en">About</span><span class="de">Über uns</span></a></li>
               <li><a href="portfolio.html">Portfolio</a></li>
-              <li><a href="kontakt.html">Contact</a></li>
+              <li><a href="kontakt.html"><span class="en">Contact</span><span class="de">Kontakt</span></a></li>
             </ul>
           </div>
           <div>
-            <h5>Contact</h5>
+            <h5><span class="en">Contact</span><span class="de">Kontakt</span></h5>
             <ul>
               <li><a href="mailto:info@alyandshay.studio">info@alyandshay.studio</a></li>
               <li><a href="tel:+41762820513">Aly +41 76 282 05 13</a></li>
@@ -262,7 +314,7 @@
           <div class="right">
             <span data-clock>—</span>
             <a href="impressum.html">Impressum</a>
-            <a href="datenschutz.html">Privacy Policy</a>
+            <a href="datenschutz.html"><span class="en">Privacy Policy</span><span class="de">Datenschutz</span></a>
           </div>
         </div>
       </div>
@@ -271,5 +323,6 @@
   </div>
 
   <script src="shared.js"></script>
+  <script src="i18n.js"></script>
 </body>
 </html>

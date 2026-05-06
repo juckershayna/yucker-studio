@@ -240,6 +240,50 @@ main {
   }
 }
 
+/* ---------- Language switcher ---------- */
+
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+  margin-right: 16px;
+}
+
+.lang-btn {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--fg-dim);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 6px;
+  transition: color 0.25s;
+  line-height: 1;
+}
+
+.lang-btn:hover { color: var(--fg-muted); }
+.lang-btn.active { color: var(--gold-soft); }
+
+.lang-sep {
+  color: var(--hairline-strong);
+  font-size: 11px;
+  font-family: var(--mono);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ---------- Bilingual content ---------- */
+
+html[data-lang="en"] .de { display: none !important; }
+html[data-lang="de"] .en { display: none !important; }
+
+@media (max-width: 860px) {
+  .lang-switcher { margin-right: 8px; }
+}
+
 /* ---------- Buttons ---------- */
 
 .btn {

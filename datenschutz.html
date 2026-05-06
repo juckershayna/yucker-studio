@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Privacy Policy — aly + shay Studio</title>
-  <meta name="description" content="Privacy Policy aly + shay Studio" />
+  <meta name="description" content="Privacy Policy — aly + shay Studio" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -21,12 +21,17 @@
         </a>
         <nav>
           <ul class="nav-links">
-            <li><a href="about.html">About</a></li>
+            <li><a href="about.html"><span class="en">About</span><span class="de">Über uns</span></a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="kontakt.html">Contact</a></li>
+            <li><a href="kontakt.html"><span class="en">Contact</span><span class="de">Kontakt</span></a></li>
           </ul>
         </nav>
-        <a href="kontakt.html" class="nav-cta">Start a Project <span class="arrow">→</span></a>
+        <div class="lang-switcher">
+          <button class="lang-btn" data-lang="en">EN</button>
+          <span class="lang-sep">|</span>
+          <button class="lang-btn" data-lang="de">DE</button>
+        </div>
+        <a href="kontakt.html" class="nav-cta"><span class="en">Start a Project</span><span class="de">Projekt starten</span> <span class="arrow">→</span></a>
         <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
       </div>
     </header>
@@ -35,13 +40,13 @@
       <section style="padding: clamp(80px,10vw,140px) 0 clamp(80px,10vw,140px);">
         <div class="container" style="max-width: 720px;">
 
-          <span class="eyebrow" style="display:block;margin-bottom:40px;">Legal</span>
-          <h1 class="display" style="margin-bottom:60px;">Privacy Policy</h1>
+          <span class="eyebrow" style="display:block;margin-bottom:40px;"><span class="en">Legal</span><span class="de">Rechtliches</span></span>
+          <h1 class="display" style="margin-bottom:60px;"><span class="en">Privacy Policy</span><span class="de">Datenschutzerklärung</span></h1>
 
           <div style="display:flex;flex-direction:column;gap:40px;color:var(--fg-muted);font-size:16px;line-height:1.7;font-weight:300;">
 
             <div>
-              <h5 style="color:var(--gold-soft);font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:12px;">Data Controller</h5>
+              <h5 style="color:var(--gold-soft);font-family:var(--mono);font-size:11px;letter-spacing:.20em;text-transform:uppercase;margin-bottom:12px;"><span class="en">Data Controller</span><span class="de">Verantwortliche Stelle</span></h5>
               <p>
                 aly + shay Studio<br />
                 Dörflistrasse 2, 8330 Pfäffikon ZH<br />
@@ -50,44 +55,49 @@
             </div>
 
             <div>
-              <h5 style="color:var(--gold-soft);font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:12px;">Data Collection &amp; Use</h5>
+              <h5 style="color:var(--gold-soft);font-family:var(--mono);font-size:11px;letter-spacing:.20em;text-transform:uppercase;margin-bottom:12px;"><span class="en">Data Collection &amp; Use</span><span class="de">Datenerhebung &amp; Nutzung</span></h5>
               <p>
-                We only collect personal data when you voluntarily provide it via the contact form or by email. This data is used exclusively to process your enquiry and is not shared with third parties.
+                <span class="en">We only collect personal data when you voluntarily provide it via the contact form or by email. This data is used exclusively to process your enquiry and is not shared with third parties.</span>
+                <span class="de">Wir erheben personenbezogene Daten nur dann, wenn du sie uns freiwillig über das Kontaktformular oder per E-Mail mitteilst. Diese Daten werden ausschließlich zur Bearbeitung deiner Anfrage verwendet und nicht an Dritte weitergegeben.</span>
               </p>
             </div>
 
             <div>
-              <h5 style="color:var(--gold-soft);font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:12px;">Contact Form</h5>
+              <h5 style="color:var(--gold-soft);font-family:var(--mono);font-size:11px;letter-spacing:.20em;text-transform:uppercase;margin-bottom:12px;"><span class="en">Contact Form</span><span class="de">Kontaktformular</span></h5>
               <p>
-                When you use the contact form, the data you enter (name, email address, message) is stored to process your enquiry and for any follow-up questions. This data will not be shared without your consent.
+                <span class="en">When you use the contact form, the data you enter (name, email address, message) is stored to process your enquiry and for any follow-up questions. This data will not be shared without your consent.</span>
+                <span class="de">Wenn du das Kontaktformular nutzt, werden die von dir eingegebenen Daten (Name, E-Mail-Adresse, Nachricht) gespeichert, um deine Anfrage zu bearbeiten und für eventuelle Rückfragen. Diese Daten werden ohne deine Zustimmung nicht weitergegeben.</span>
               </p>
             </div>
 
             <div>
-              <h5 style="color:var(--gold-soft);font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:12px;">Hosting &amp; External Services</h5>
+              <h5 style="color:var(--gold-soft);font-family:var(--mono);font-size:11px;letter-spacing:.20em;text-transform:uppercase;margin-bottom:12px;"><span class="en">Hosting &amp; External Services</span><span class="de">Hosting &amp; externe Dienste</span></h5>
               <p>
-                This website is hosted via Vercel. When you visit the site, technical data (IP address, browser type, access time) is recorded in server logs. Google Fonts and OpenStreetMap (via CARTO) are also embedded for display purposes. These services may have their own privacy policies.
+                <span class="en">This website is hosted via Vercel. When you visit the site, technical data (IP address, browser type, access time) is recorded in server logs. Google Fonts and OpenStreetMap (via CARTO) are also embedded for display purposes. These services may have their own privacy policies.</span>
+                <span class="de">Diese Website wird über Vercel gehostet. Bei einem Besuch der Seite werden technische Daten (IP-Adresse, Browsertyp, Zugriffszeit) in Server-Logs erfasst. Google Fonts und OpenStreetMap (über CARTO) sind ebenfalls für Darstellungszwecke eingebunden. Diese Dienste können eigene Datenschutzrichtlinien haben.</span>
               </p>
             </div>
 
             <div>
-              <h5 style="color:var(--gold-soft);font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:12px;">Your Rights</h5>
+              <h5 style="color:var(--gold-soft);font-family:var(--mono);font-size:11px;letter-spacing:.20em;text-transform:uppercase;margin-bottom:12px;"><span class="en">Your Rights</span><span class="de">Deine Rechte</span></h5>
               <p>
-                You have the right to access, correct, and delete your stored data. Please contact us at: <a href="mailto:info@alyandshay.studio" style="color:var(--fg-muted);">info@alyandshay.studio</a>
+                <span class="en">You have the right to access, correct, and delete your stored data. Please contact us at: <a href="mailto:info@alyandshay.studio" style="color:var(--fg-muted);">info@alyandshay.studio</a></span>
+                <span class="de">Du hast das Recht auf Auskunft, Berichtigung und Löschung deiner gespeicherten Daten. Bitte kontaktiere uns unter: <a href="mailto:info@alyandshay.studio" style="color:var(--fg-muted);">info@alyandshay.studio</a></span>
               </p>
             </div>
 
             <div>
-              <h5 style="color:var(--gold-soft);font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:12px;">Cookies</h5>
+              <h5 style="color:var(--gold-soft);font-family:var(--mono);font-size:11px;letter-spacing:.20em;text-transform:uppercase;margin-bottom:12px;">Cookies</h5>
               <p>
-                This website does not use tracking cookies. Only technically necessary settings are stored in local browser storage.
+                <span class="en">This website does not use tracking cookies. Only technically necessary settings are stored in local browser storage.</span>
+                <span class="de">Diese Website verwendet keine Tracking-Cookies. Nur technisch notwendige Einstellungen werden im lokalen Browser-Speicher abgelegt.</span>
               </p>
             </div>
 
           </div>
 
           <div style="margin-top:60px;padding-top:40px;border-top:1px solid var(--hairline);">
-            <a href="index.html" class="btn btn-ghost">← Back to Studio</a>
+            <a href="index.html" class="btn btn-ghost"><span class="en">← Back to Studio</span><span class="de">← Zurück zum Studio</span></a>
           </div>
 
         </div>
@@ -97,18 +107,18 @@
     <footer>
       <div class="container">
         <div class="footer-grid">
-          <div><p class="footer-tagline">Brands with <em>character</em> — crafted with care.</p></div>
+          <div><p class="footer-tagline"><span class="en">Brands with <em>character</em> — crafted with care.</span><span class="de">Marken mit <em>Charakter</em> — mit Sorgfalt gestaltet.</span></p></div>
           <div>
             <h5>Studio</h5>
             <ul>
               <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
+              <li><a href="about.html"><span class="en">About</span><span class="de">Über uns</span></a></li>
               <li><a href="portfolio.html">Portfolio</a></li>
-              <li><a href="kontakt.html">Contact</a></li>
+              <li><a href="kontakt.html"><span class="en">Contact</span><span class="de">Kontakt</span></a></li>
             </ul>
           </div>
           <div>
-            <h5>Contact</h5>
+            <h5><span class="en">Contact</span><span class="de">Kontakt</span></h5>
             <ul>
               <li><a href="mailto:info@alyandshay.studio">info@alyandshay.studio</a></li>
               <li><a href="tel:+41762820513">Aly +41 76 282 05 13</a></li>
@@ -129,7 +139,7 @@
           <div class="right">
             <span data-clock>—</span>
             <a href="impressum.html">Impressum</a>
-            <a href="datenschutz.html">Privacy Policy</a>
+            <a href="datenschutz.html"><span class="en">Privacy Policy</span><span class="de">Datenschutz</span></a>
           </div>
         </div>
       </div>
@@ -137,5 +147,6 @@
 
   </div>
   <script src="shared.js"></script>
+  <script src="i18n.js"></script>
 </body>
 </html>
