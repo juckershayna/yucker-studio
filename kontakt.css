@@ -131,7 +131,7 @@
 .field-label {
   font-family: var(--mono);
   font-size: 11px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--fg-muted);
   display: inline-flex;
@@ -264,7 +264,7 @@
 .map-label p {
   font-family: var(--mono);
   font-size: 12px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--fg-muted);
 }
