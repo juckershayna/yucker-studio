@@ -15,7 +15,7 @@
   --gold-soft: #C6A47E;
   --gold-deep: #6B5840;
 
-  --serif: "Neue Haas Grotesk Display", "Helvetica Neue", "Inter", system-ui, sans-serif;
+  --serif: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
   --sans: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
   --mono: "JetBrains Mono", "SF Mono", ui-monospace, monospace;
 
