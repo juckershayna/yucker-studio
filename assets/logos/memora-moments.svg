@@ -1,12 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 80" fill="none">
-  <!-- Simple MM monogram circles -->
-  <circle cx="42" cy="32" r="20" stroke="currentColor" stroke-width="3"/>
-  <circle cx="78" cy="32" r="20" stroke="currentColor" stroke-width="3"/>
-  <!-- Dot accent -->
-  <circle cx="60" cy="32" r="4" fill="currentColor"/>
-  <!-- MEMORA MOMENTS label -->
-  <text x="95" y="38"
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 80" fill="none">
+  <!-- MM monogram: two overlapping circles -->
+  <circle cx="38" cy="36" r="22" stroke="rgba(255,255,255,0.6)" stroke-width="2.5"/>
+  <circle cx="62" cy="36" r="22" stroke="rgba(255,255,255,0.6)" stroke-width="2.5"/>
+  <!-- centre dot -->
+  <circle cx="50" cy="36" r="4" fill="rgba(255,255,255,0.5)"/>
+  <!-- label -->
+  <text x="100" y="32"
     font-family="'Helvetica Neue',Helvetica,Arial,sans-serif"
-    font-size="11" font-weight="300" letter-spacing="3"
-    fill="currentColor">MEMORA MOMENTS</text>
+    font-size="10" font-weight="300" letter-spacing="2.5"
+    fill="rgba(255,255,255,0.55)">MEMORA</text>
+  <text x="100" y="48"
+    font-family="'Helvetica Neue',Helvetica,Arial,sans-serif"
+    font-size="10" font-weight="300" letter-spacing="2.5"
+    fill="rgba(255,255,255,0.55)">MOMENTS</text>
 </svg>

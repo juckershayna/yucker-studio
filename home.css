@@ -165,7 +165,7 @@
   width: auto;
   max-width: 110px;
   object-fit: contain;
-  filter: invert(1) brightness(0.4);
+  filter: brightness(0) invert(1) opacity(0.45);
   transition: filter 0.35s var(--ease);
 }
 
@@ -185,7 +185,7 @@
 }
 
 .client-logo:hover .client-logo-img {
-  filter: invert(1) sepia(1) saturate(1.5) hue-rotate(5deg) brightness(0.85);
+  filter: brightness(0) invert(1) opacity(0.9);
 }
 
 .client-sep {
