@@ -55,18 +55,30 @@
         </div>
       </section>
 
-      <!-- PROJECT SUMMARY (filled dynamically from service page URL params) -->
-      <div id="project-summary" class="project-summary" style="display:none">
+      <!-- CART — filled dynamically from localStorage via cart.js -->
+      <section id="cart-section" class="cart-section" style="display:none">
         <div class="container">
-          <div class="project-summary-inner">
-            <div class="project-summary-label">
-              <span class="en">Your selection</span><span class="de">Deine Auswahl</span>
-            </div>
-            <div id="project-summary-items" class="project-summary-items"></div>
-            <div id="project-summary-total" class="project-summary-total"></div>
+          <div class="cart-hd">
+            <span class="cart-eyebrow">
+              <span class="en">Your Configuration</span>
+              <span class="de">Deine Konfiguration</span>
+            </span>
+            <a href="index.html" class="cart-add-btn">
+              <span class="en">+ Add another service</span>
+              <span class="de">+ Weiteren Service hinzufügen</span>
+              <span class="arrow">→</span>
+            </a>
+          </div>
+          <div id="cart-projects" class="cart-projects"></div>
+          <div class="cart-grand-total">
+            <span class="cart-grand-label">
+              <span class="en">Estimated Total</span>
+              <span class="de">Geschätztes Gesamtbudget</span>
+            </span>
+            <span id="cart-grand-value" class="cart-grand-value"></span>
           </div>
         </div>
-      </div>
+      </section>
 
       <section class="kontakt-body">
         <div class="container kontakt-grid">
@@ -119,7 +131,12 @@
             </div>
 
             <label class="field">
-              <span class="field-label"><span class="num">03</span> <span class="en">Topic</span><span class="de">Thema</span></span>
+              <span class="field-label"><span class="num">03</span> <span class="en">Company / Client</span><span class="de">Unternehmen / Kunde</span></span>
+              <input type="text" name="company" placeholder="e.g. TW Projekts, Human Faces, Konzi …" autocomplete="organization" />
+            </label>
+
+            <label class="field">
+              <span class="field-label"><span class="num">04</span> <span class="en">Topic</span><span class="de">Thema</span></span>
               <div class="chip-row">
                 <label class="chip"><input type="checkbox" name="topic" value="branding" /><span>Branding</span></label>
                 <label class="chip"><input type="checkbox" name="topic" value="web" /><span>Web Design</span></label>
@@ -131,7 +148,7 @@
             </label>
 
             <label class="field">
-              <span class="field-label"><span class="num">04</span> <span class="en">Your Message</span><span class="de">Deine Nachricht</span></span>
+              <span class="field-label"><span class="num">05</span> <span class="en">Your Message</span><span class="de">Deine Nachricht</span></span>
               <textarea name="message" rows="6" placeholder="What are you planning — and when?"></textarea>
             </label>
 
@@ -212,72 +229,137 @@
   </div>
   <script src="shared.js"></script>
   <script src="i18n.js"></script>
+  <script src="cart.js"></script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-    (function() {
-      var mapEl = document.getElementById('studio-map');
-      if (!mapEl || typeof L === 'undefined') return;
-      var lat = 47.3680, lng = 8.7795;
-      var map = L.map('studio-map', {
-        center: [lat, lng],
-        zoom: 16,
-        scrollWheelZoom: false
-      });
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
-        subdomains: 'abcd',
-        maxZoom: 19
-      }).addTo(map);
-      var icon = L.divIcon({ className: 'map-marker', iconSize: [14, 14], iconAnchor: [7, 7] });
-      L.marker([lat, lng], { icon: icon }).addTo(map);
-      setTimeout(function() { map.invalidateSize(); }, 400);
-    })();
+  /* Map */
+  (function () {
+    var mapEl = document.getElementById('studio-map');
+    if (!mapEl || typeof L === 'undefined') return;
+    var lat = 47.3680, lng = 8.7795;
+    var map = L.map('studio-map', { center: [lat, lng], zoom: 16, scrollWheelZoom: false });
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
+      subdomains: 'abcd', maxZoom: 19
+    }).addTo(map);
+    var icon = L.divIcon({ className: 'map-marker', iconSize: [14, 14], iconAnchor: [7, 7] });
+    L.marker([lat, lng], { icon: icon }).addTo(map);
+    setTimeout(function () { map.invalidateSize(); }, 400);
+  })();
   </script>
   <script>
-    (function() {
-      const form = document.querySelector('.kontakt-form');
-      if (!form) return;
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const foot = form.querySelector('.form-foot');
-        foot.innerHTML = '<p class="form-thanks">Danke — deine Nachricht ist bei uns. Wir melden uns bald.</p>';
-      });
-    })();
-  </script>
-  <script>
-    // Read URL params from service page price calculator and show summary
-    (function () {
-      var params = new URLSearchParams(window.location.search);
-      var service = params.get('service');
-      var selections = params.get('selections');
-      var total = params.get('total');
-      if (!service) return;
+  /* Cart rendering */
+  (function () {
+    var SERVICE_CHIP = {
+      web: 'web', branding: 'branding', photography: 'foto',
+      film: 'film', marketing: 'marketing', interior: 'interior'
+    };
 
-      // Pre-select service chip in form
-      var serviceToChip = { branding: 'branding', web: 'web', photography: 'foto', film: 'film', marketing: 'marketing', interior: 'interior' };
-      var chipVal = serviceToChip[service];
-      if (chipVal) {
-        var chipInput = document.querySelector('.chip input[value="' + chipVal + '"]');
-        if (chipInput) chipInput.checked = true;
+    function fmt(n) {
+      return 'CHF ' + n.toLocaleString('de-CH');
+    }
+
+    function renderCart() {
+      var projects = CartStore.getAll();
+      var section    = document.getElementById('cart-section');
+      var container  = document.getElementById('cart-projects');
+      var grandEl    = document.getElementById('cart-grand-value');
+
+      if (!projects.length) {
+        section.style.display = 'none';
+        return;
       }
+      section.style.display = '';
 
-      // Show summary panel
-      var summary = document.getElementById('project-summary');
-      var itemsEl = document.getElementById('project-summary-items');
-      var totalEl = document.getElementById('project-summary-total');
-      if (!summary || !itemsEl) return;
-
-      var lang = document.documentElement.getAttribute('data-lang') || 'en';
+      var grandTotal  = 0;
+      var hasOnReq    = false;
       var html = '';
-      if (selections) {
-        selections.split('|').forEach(function (sel) {
-          if (sel.trim()) html += '<span class="project-summary-item">— ' + sel.trim() + '</span>';
-        });
+
+      projects.forEach(function (p) {
+        if (p.is_on_request) { hasOnReq = true; }
+        else { grandTotal += p.total_price_num; }
+
+        var priceHtml = p.is_on_request
+          ? '<span class="en">On request</span><span class="de">Auf Anfrage</span>'
+          : p.total_price_str;
+
+        html +=
+          '<div class="cart-proj">' +
+            '<div class="cart-proj-info">' +
+              '<span class="cart-proj-name">' +
+                '<span class="en">' + p.service_name_en + '</span>' +
+                '<span class="de">' + p.service_name_de + '</span>' +
+              '</span>' +
+              '<span class="cart-proj-price">' + priceHtml + '</span>' +
+            '</div>' +
+            '<div class="cart-proj-actions">' +
+              '<a href="' + p.service_url + '" class="cart-proj-edit">' +
+                '<span class="en">Edit</span><span class="de">Bearbeiten</span>' +
+                ' <span class="arrow">↗</span>' +
+              '</a>' +
+              '<button class="cart-proj-remove" data-id="' + p.service_id + '" aria-label="Remove">&#xD7;</button>' +
+            '</div>' +
+          '</div>';
+      });
+
+      container.innerHTML = html;
+
+      // Grand total line
+      var grandHtml;
+      if (hasOnReq && grandTotal === 0) {
+        grandHtml = '<span class="en">On request</span><span class="de">Auf Anfrage</span>';
+      } else if (hasOnReq) {
+        grandHtml = fmt(grandTotal) +
+          ' <span class="cart-grand-plus"><span class="en">+ on-request items</span>' +
+          '<span class="de">+ Auf-Anfrage-Positionen</span></span>';
+      } else {
+        grandHtml = fmt(grandTotal);
       }
-      itemsEl.innerHTML = html;
-      if (total && totalEl) totalEl.textContent = total;
-      summary.style.display = 'block';
-    })();
+      grandEl.innerHTML = grandHtml;
+
+      // Remove buttons
+      container.querySelectorAll('.cart-proj-remove').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          CartStore.remove(this.getAttribute('data-id'));
+          renderCart();
+          syncTopicChips();
+        });
+      });
+
+      syncTopicChips();
+    }
+
+    function syncTopicChips() {
+      var ids = CartStore.getAll().map(function (p) { return p.service_id; });
+      document.querySelectorAll('.chip input[name="topic"]').forEach(function (inp) {
+        inp.checked = false;
+      });
+      ids.forEach(function (sid) {
+        var chipVal = SERVICE_CHIP[sid];
+        if (chipVal) {
+          var inp = document.querySelector('.chip input[value="' + chipVal + '"]');
+          if (inp) inp.checked = true;
+        }
+      });
+    }
+
+    /* Form submit — clear cart, show confirmation */
+    var form = document.querySelector('.kontakt-form');
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        CartStore.clear();
+        var foot = form.querySelector('.form-foot');
+        foot.innerHTML =
+          '<p class="form-thanks">' +
+            '<span class="en">Thank you — we\'ve received your message and will be in touch within two working days.</span>' +
+            '<span class="de">Danke — deine Nachricht ist bei uns. Wir melden uns innerhalb von zwei Werktagen.</span>' +
+          '</p>';
+      });
+    }
+
+    renderCart();
+  })();
   </script>
 </body>
 </html>

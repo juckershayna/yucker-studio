@@ -293,6 +293,7 @@
   </div>
   <script src="shared.js"></script>
   <script src="i18n.js"></script>
+  <script src="cart.js"></script>
   <script>
   (function () {
     function getLang() { return document.documentElement.getAttribute('data-lang') || 'en'; }
@@ -367,6 +368,67 @@
     document.addEventListener('langchange', function () { calculate(); updateCtaLink(); });
     calculate();
     updateCtaLink();
+  })();
+  </script>
+
+  <script>
+  /* Cart integration — service-interior */
+  (function () {
+    var SERVICE_ID  = 'interior';
+    var NAME_EN     = 'Interior Design';
+    var NAME_DE     = 'Innenarchitektur';
+    var SERVICE_URL = 'service-interior.html';
+
+    var saved = CartStore.getAll().filter(function (p) {
+      return p.service_id === SERVICE_ID;
+    })[0];
+    if (saved && saved.calc_state) {
+      var st = saved.calc_state;
+      Object.keys(st.radios || {}).forEach(function (name) {
+        var val = st.radios[name];
+        document.querySelectorAll(
+          '.calc-options input[type="radio"][name="' + name + '"]'
+        ).forEach(function (inp) {
+          if (inp.value === val) { inp.checked = true; inp.dispatchEvent(new Event('change')); }
+        });
+      });
+      Object.keys(st.checkboxes || {}).forEach(function (name) {
+        var vals = st.checkboxes[name] || [];
+        document.querySelectorAll(
+          '.calc-options input[type="checkbox"][name="' + name + '"]'
+        ).forEach(function (inp) {
+          inp.checked = vals.indexOf(inp.value) >= 0;
+          inp.dispatchEvent(new Event('change'));
+        });
+      });
+    }
+
+    document.getElementById('calc-cta-link').addEventListener('click', function (e) {
+      e.preventDefault();
+      var priceEl = document.getElementById('calc-price');
+      var isOnReq = priceEl && (
+        priceEl.classList.contains('on-request') ||
+        /request|anfrage/i.test(priceEl.textContent)
+      );
+      var priceStr = priceEl ? priceEl.textContent.trim() : '';
+      var priceNum = isOnReq ? 0 : (parseInt(priceStr.replace(/[^0-9]/g, ''), 10) || 0);
+
+      var calcState = { radios: {}, checkboxes: {} };
+      document.querySelectorAll('.calc-options input[type="radio"]:checked').forEach(function (inp) {
+        calcState.radios[inp.name] = inp.value;
+      });
+      document.querySelectorAll('.calc-options input[type="checkbox"]').forEach(function (inp) {
+        if (!calcState.checkboxes[inp.name]) calcState.checkboxes[inp.name] = [];
+        if (inp.checked) calcState.checkboxes[inp.name].push(inp.value);
+      });
+
+      CartStore.save({
+        service_id: SERVICE_ID, service_name_en: NAME_EN, service_name_de: NAME_DE,
+        service_url: SERVICE_URL, total_price_num: priceNum, total_price_str: priceStr,
+        is_on_request: isOnReq, calc_state: calcState
+      });
+      window.location.href = 'kontakt.html';
+    });
   })();
   </script>
 </body>
