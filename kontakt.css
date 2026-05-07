@@ -99,6 +99,11 @@
 @media (max-width: 960px) {
   .kontakt-info {
     position: static;
+    order: 2;   /* appears after the form on mobile */
+  }
+
+  .kontakt-form {
+    order: 1;   /* form first on mobile */
   }
 }
 
