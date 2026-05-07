@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>(function(){var l=localStorage.getItem('studio-lang');if(l&&l!=='en'){document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l);}})();</script>
   <title>Photography — aly + shay Studio</title>
   <meta name="description" content="Professional, emotive photography for websites, campaigns and social media. Portrait, product, architecture." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -118,7 +119,7 @@
       </section>
 
       <!-- PRICE CALCULATOR -->
-      <section class="calc-section">
+      <section class="calc-section" id="calculator">
         <div class="container">
           <div class="calc-section-head">
             <span class="eyebrow reveal">
@@ -142,39 +143,39 @@
                 </span>
 
                 <label class="calc-opt">
-                  <input type="radio" name="duration" value="350" data-label-en="1 hour" data-label-de="1 Stunde" />
+                  <input type="radio" name="duration" value="390" data-label-en="1 hour" data-label-de="1 Stunde" />
                   <span class="calc-opt-left">
                     <span class="calc-opt-indicator"></span>
                     <span class="opt-label"><span class="en">1 hour</span><span class="de">1 Stunde</span></span>
                   </span>
-                  <span class="opt-price">CHF 350</span>
+                  <span class="opt-price">CHF 390</span>
                 </label>
 
                 <label class="calc-opt">
-                  <input type="radio" name="duration" value="600" data-label-en="2–3 hours" data-label-de="2–3 Stunden" checked />
+                  <input type="radio" name="duration" value="750" data-label-en="2–3 hours" data-label-de="2–3 Stunden" checked />
                   <span class="calc-opt-left">
                     <span class="calc-opt-indicator"></span>
                     <span class="opt-label"><span class="en">2–3 hours</span><span class="de">2–3 Stunden</span></span>
                   </span>
-                  <span class="opt-price">CHF 600</span>
+                  <span class="opt-price">CHF 750</span>
                 </label>
 
                 <label class="calc-opt">
-                  <input type="radio" name="duration" value="900" data-label-en="Half day (4h)" data-label-de="Halbtag (4h)" />
+                  <input type="radio" name="duration" value="1100" data-label-en="Half day (4h)" data-label-de="Halbtag (4h)" />
                   <span class="calc-opt-left">
                     <span class="calc-opt-indicator"></span>
                     <span class="opt-label"><span class="en">Half day (4h)</span><span class="de">Halbtag (4h)</span></span>
                   </span>
-                  <span class="opt-price">CHF 900</span>
+                  <span class="opt-price">CHF 1,100</span>
                 </label>
 
                 <label class="calc-opt">
-                  <input type="radio" name="duration" value="1500" data-label-en="Full day (8h)" data-label-de="Ganztag (8h)" />
+                  <input type="radio" name="duration" value="1900" data-label-en="Full day (8h)" data-label-de="Ganztag (8h)" />
                   <span class="calc-opt-left">
                     <span class="calc-opt-indicator"></span>
                     <span class="opt-label"><span class="en">Full day (8h)</span><span class="de">Ganztag (8h)</span></span>
                   </span>
-                  <span class="opt-price">CHF 1,500</span>
+                  <span class="opt-price">CHF 1,900</span>
                 </label>
               </div>
 
@@ -195,21 +196,21 @@
                 </label>
 
                 <label class="calc-opt">
-                  <input type="radio" name="editing" value="150" data-label-en="Extended – 60 edited photos" data-label-de="Erweitert – 60 Fotos" />
+                  <input type="radio" name="editing" value="190" data-label-en="Extended – 60 edited photos" data-label-de="Erweitert – 60 Fotos" />
                   <span class="calc-opt-left">
                     <span class="calc-opt-indicator"></span>
                     <span class="opt-label"><span class="en">Extended – 60 edited photos</span><span class="de">Erweitert – 60 Fotos</span></span>
                   </span>
-                  <span class="opt-price">+CHF 150</span>
+                  <span class="opt-price">+CHF 190</span>
                 </label>
 
                 <label class="calc-opt">
-                  <input type="radio" name="editing" value="350" data-label-en="Full gallery – 100+ photos" data-label-de="Vollgalerie – 100+ Fotos" />
+                  <input type="radio" name="editing" value="450" data-label-en="Full gallery – 100+ photos" data-label-de="Vollgalerie – 100+ Fotos" />
                   <span class="calc-opt-left">
                     <span class="calc-opt-indicator"></span>
                     <span class="opt-label"><span class="en">Full gallery – 100+ photos</span><span class="de">Vollgalerie – 100+ Fotos</span></span>
                   </span>
-                  <span class="opt-price">+CHF 350</span>
+                  <span class="opt-price">+CHF 450</span>
                 </label>
               </div>
 
@@ -257,14 +258,14 @@
                   <span class="en">Estimated Investment</span>
                   <span class="de">Geschätztes Investment</span>
                 </span>
-                <div class="calc-price-big" id="calc-price">CHF 600</div>
+                <div class="calc-price-big" id="calc-price">CHF 750</div>
                 <div class="calc-price-note" id="calc-price-note"></div>
               </div>
               <div class="calc-divider"></div>
               <div class="calc-breakdown" id="calc-breakdown"></div>
               <div class="calc-divider"></div>
               <div class="calc-cta">
-                <a href="kontakt.html" class="btn btn-primary">
+                <a id="calc-cta-link" href="kontakt.html" class="btn btn-primary">
                   <span class="en">Book a Session</span><span class="de">Session buchen</span>
                   <span class="arrow">→</span>
                 </a>
@@ -333,7 +334,7 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <span>© MMXXVI aly + shay Studio</span>
+          <span>© aly + shay Studio</span>
           <div class="right">
             <span data-clock>—</span>
             <a href="impressum.html">Impressum</a>
@@ -347,6 +348,7 @@
 
   <script src="shared.js"></script>
   <script src="i18n.js"></script>
+  <script src="cart.js"></script>
   <script>
   (function () {
     function getLang() { return document.documentElement.getAttribute('data-lang') || 'en'; }
@@ -390,11 +392,90 @@
       noteEl.innerHTML = '<span class="en">Starting from</span><span class="de">Ab</span>';
     }
 
+    function updateCtaLink() {
+      var ctaLink = document.getElementById('calc-cta-link');
+      if (!ctaLink) return;
+      var l = getLang();
+      var params = new URLSearchParams();
+      params.set('service', 'photography');
+      var sels = [];
+      document.querySelectorAll('.calc-options input:checked').forEach(function (inp) {
+        var label = l === 'de' ? (inp.getAttribute('data-label-de') || inp.getAttribute('data-label-en')) : (inp.getAttribute('data-label-en') || inp.getAttribute('data-label-de'));
+        if (label) sels.push(label);
+      });
+      if (sels.length) params.set('selections', sels.join('|'));
+      var priceEl = document.getElementById('calc-price');
+      if (priceEl) params.set('total', priceEl.textContent);
+      ctaLink.href = 'kontakt.html?' + params.toString();
+    }
+
     document.querySelectorAll('input[name="duration"], input[name="editing"], input[name="delivery"]').forEach(function (inp) {
-      inp.addEventListener('change', calculate);
+      inp.addEventListener('change', function () { calculate(); updateCtaLink(); });
     });
-    document.addEventListener('langchange', calculate);
+    document.addEventListener('langchange', function () { calculate(); updateCtaLink(); });
     calculate();
+    updateCtaLink();
+  })();
+  </script>
+
+  <script>
+  /* Cart integration — service-photography */
+  (function () {
+    var SERVICE_ID  = 'photography';
+    var NAME_EN     = 'Photography';
+    var NAME_DE     = 'Fotografie';
+    var SERVICE_URL = 'service-photography.html';
+
+    var saved = CartStore.getAll().filter(function (p) {
+      return p.service_id === SERVICE_ID;
+    })[0];
+    if (saved && saved.calc_state) {
+      var st = saved.calc_state;
+      Object.keys(st.radios || {}).forEach(function (name) {
+        var val = st.radios[name];
+        document.querySelectorAll(
+          '.calc-options input[type="radio"][name="' + name + '"]'
+        ).forEach(function (inp) {
+          if (inp.value === val) { inp.checked = true; inp.dispatchEvent(new Event('change')); }
+        });
+      });
+      Object.keys(st.checkboxes || {}).forEach(function (name) {
+        var vals = st.checkboxes[name] || [];
+        document.querySelectorAll(
+          '.calc-options input[type="checkbox"][name="' + name + '"]'
+        ).forEach(function (inp) {
+          inp.checked = vals.indexOf(inp.value) >= 0;
+          inp.dispatchEvent(new Event('change'));
+        });
+      });
+    }
+
+    document.getElementById('calc-cta-link').addEventListener('click', function (e) {
+      e.preventDefault();
+      var priceEl = document.getElementById('calc-price');
+      var isOnReq = priceEl && (
+        priceEl.classList.contains('on-request') ||
+        /request|anfrage/i.test(priceEl.textContent)
+      );
+      var priceStr = priceEl ? priceEl.textContent.trim() : '';
+      var priceNum = isOnReq ? 0 : (parseInt(priceStr.replace(/[^0-9]/g, ''), 10) || 0);
+
+      var calcState = { radios: {}, checkboxes: {} };
+      document.querySelectorAll('.calc-options input[type="radio"]:checked').forEach(function (inp) {
+        calcState.radios[inp.name] = inp.value;
+      });
+      document.querySelectorAll('.calc-options input[type="checkbox"]').forEach(function (inp) {
+        if (!calcState.checkboxes[inp.name]) calcState.checkboxes[inp.name] = [];
+        if (inp.checked) calcState.checkboxes[inp.name].push(inp.value);
+      });
+
+      CartStore.save({
+        service_id: SERVICE_ID, service_name_en: NAME_EN, service_name_de: NAME_DE,
+        service_url: SERVICE_URL, total_price_num: priceNum, total_price_str: priceStr,
+        is_on_request: isOnReq, calc_state: calcState
+      });
+      window.location.href = 'kontakt.html';
+    });
   })();
   </script>
 

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>(function(){var l=localStorage.getItem('studio-lang');if(l&&l!=='en'){document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l);}})();</script>
   <title>Web Design &amp; Development — aly + shay Studio</title>
   <meta name="description" content="Bespoke websites — visually compelling, user-friendly, and built to convert. Custom design, development, CMS integration, and launch support." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -118,7 +119,7 @@
       </section>
 
       <!-- PRICE CALCULATOR -->
-      <section class="calc-section">
+      <section class="calc-section" id="calculator">
         <div class="container">
           <div class="calc-section-head">
             <span class="eyebrow reveal">
@@ -143,30 +144,30 @@
                 </span>
 
                 <label class="calc-opt">
-                  <input type="radio" name="pages" value="1800" data-label-en="1–3 pages" data-label-de="1–3 Seiten" />
+                  <input type="radio" name="pages" value="2300" data-label-en="1–3 pages" data-label-de="1–3 Seiten" />
                   <span class="calc-opt-left">
                     <span class="calc-opt-indicator"></span>
                     <span class="opt-label"><span class="en">1–3 pages</span><span class="de">1–3 Seiten</span></span>
                   </span>
-                  <span class="opt-price">CHF 1,800</span>
+                  <span class="opt-price">CHF 2,300</span>
                 </label>
 
                 <label class="calc-opt">
-                  <input type="radio" name="pages" value="2900" data-label-en="4–7 pages" data-label-de="4–7 Seiten" checked />
+                  <input type="radio" name="pages" value="3900" data-label-en="4–7 pages" data-label-de="4–7 Seiten" checked />
                   <span class="calc-opt-left">
                     <span class="calc-opt-indicator"></span>
                     <span class="opt-label"><span class="en">4–7 pages</span><span class="de">4–7 Seiten</span></span>
                   </span>
-                  <span class="opt-price">CHF 2,900</span>
+                  <span class="opt-price">CHF 3,900</span>
                 </label>
 
                 <label class="calc-opt">
-                  <input type="radio" name="pages" value="4500" data-label-en="8–15 pages" data-label-de="8–15 Seiten" />
+                  <input type="radio" name="pages" value="5900" data-label-en="8–15 pages" data-label-de="8–15 Seiten" />
                   <span class="calc-opt-left">
                     <span class="calc-opt-indicator"></span>
                     <span class="opt-label"><span class="en">8–15 pages</span><span class="de">8–15 Seiten</span></span>
                   </span>
-                  <span class="opt-price">CHF 4,500</span>
+                  <span class="opt-price">CHF 5,900</span>
                 </label>
 
                 <label class="calc-opt">
@@ -187,39 +188,39 @@
                 </span>
 
                 <label class="calc-opt is-checkbox">
-                  <input type="checkbox" name="addon" value="1400" data-label-en="E-commerce shop" data-label-de="Online-Shop" />
+                  <input type="checkbox" name="addon" value="1900" data-label-en="E-commerce shop" data-label-de="Online-Shop" />
                   <span class="calc-opt-left">
                     <span class="calc-opt-indicator"></span>
                     <span class="opt-label"><span class="en">E-commerce shop</span><span class="de">Online-Shop</span></span>
                   </span>
-                  <span class="opt-price">+CHF 1,400</span>
+                  <span class="opt-price">+CHF 1,900</span>
                 </label>
 
                 <label class="calc-opt is-checkbox">
-                  <input type="checkbox" name="addon" value="400" data-label-en="Blog" data-label-de="Blog" />
+                  <input type="checkbox" name="addon" value="550" data-label-en="Blog" data-label-de="Blog" />
                   <span class="calc-opt-left">
                     <span class="calc-opt-indicator"></span>
                     <span class="opt-label"><span class="en">Blog</span><span class="de">Blog</span></span>
                   </span>
-                  <span class="opt-price">+CHF 400</span>
+                  <span class="opt-price">+CHF 550</span>
                 </label>
 
                 <label class="calc-opt is-checkbox">
-                  <input type="checkbox" name="addon" value="600" data-label-en="Booking / appointment system" data-label-de="Buchungssystem" />
+                  <input type="checkbox" name="addon" value="800" data-label-en="Booking / appointment system" data-label-de="Buchungssystem" />
                   <span class="calc-opt-left">
                     <span class="calc-opt-indicator"></span>
                     <span class="opt-label"><span class="en">Booking / appointment system</span><span class="de">Buchungssystem</span></span>
                   </span>
-                  <span class="opt-price">+CHF 600</span>
+                  <span class="opt-price">+CHF 800</span>
                 </label>
 
                 <label class="calc-opt is-checkbox">
-                  <input type="checkbox" name="addon" value="500" data-label-en="Multilingual" data-label-de="Mehrsprachig" />
+                  <input type="checkbox" name="addon" value="700" data-label-en="Multilingual" data-label-de="Mehrsprachig" />
                   <span class="calc-opt-left">
                     <span class="calc-opt-indicator"></span>
                     <span class="opt-label"><span class="en">Multilingual</span><span class="de">Mehrsprachig</span></span>
                   </span>
-                  <span class="opt-price">+CHF 500</span>
+                  <span class="opt-price">+CHF 700</span>
                 </label>
               </div>
 
@@ -276,14 +277,14 @@
                   <span class="en">Estimated Investment</span>
                   <span class="de">Geschätztes Investment</span>
                 </span>
-                <div class="calc-price-big" id="calc-price">CHF 2,900</div>
+                <div class="calc-price-big" id="calc-price">CHF 3,900</div>
                 <div class="calc-price-note" id="calc-price-note"></div>
               </div>
               <div class="calc-divider"></div>
               <div class="calc-breakdown" id="calc-breakdown"></div>
               <div class="calc-divider"></div>
               <div class="calc-cta">
-                <a href="kontakt.html" class="btn btn-primary">
+                <a id="calc-cta-link" href="kontakt.html" class="btn btn-primary">
                   <span class="en">Start Your Project</span><span class="de">Projekt starten</span>
                   <span class="arrow">→</span>
                 </a>
@@ -352,7 +353,7 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <span>© MMXXVI aly + shay Studio</span>
+          <span>© aly + shay Studio</span>
           <div class="right">
             <span data-clock>—</span>
             <a href="impressum.html">Impressum</a>
@@ -366,6 +367,7 @@
 
   <script src="shared.js"></script>
   <script src="i18n.js"></script>
+  <script src="cart.js"></script>
   <script>
   (function () {
     function getLang() {
@@ -450,13 +452,94 @@
       noteEl.innerHTML = '<span class="en">Starting from</span><span class="de">Ab</span>';
     }
 
+    function updateCtaLink() {
+      var ctaLink = document.getElementById('calc-cta-link');
+      if (!ctaLink) return;
+      var l = getLang();
+      var params = new URLSearchParams();
+      params.set('service', 'web');
+      var sels = [];
+      document.querySelectorAll('.calc-options input:checked').forEach(function (inp) {
+        var label = l === 'de' ? (inp.getAttribute('data-label-de') || inp.getAttribute('data-label-en')) : (inp.getAttribute('data-label-en') || inp.getAttribute('data-label-de'));
+        if (label) sels.push(label);
+      });
+      if (sels.length) params.set('selections', sels.join('|'));
+      var priceEl = document.getElementById('calc-price');
+      if (priceEl) params.set('total', priceEl.textContent);
+      ctaLink.href = 'kontakt.html?' + params.toString();
+    }
+
     document.querySelectorAll('input[name="pages"], input[name="addon"], input[name="timeline"]').forEach(function (inp) {
-      inp.addEventListener('change', calculate);
+      inp.addEventListener('change', function () { calculate(); updateCtaLink(); });
     });
 
-    document.addEventListener('langchange', calculate);
+    document.addEventListener('langchange', function () { calculate(); updateCtaLink(); });
 
     calculate();
+    updateCtaLink();
+  })();
+  </script>
+
+  <script>
+  /* Cart integration — service-web */
+  (function () {
+    var SERVICE_ID  = 'web';
+    var NAME_EN     = 'Web Design & Development';
+    var NAME_DE     = 'Web Design & Entwicklung';
+    var SERVICE_URL = 'service-web.html';
+
+    // Restore previously saved calculator state
+    var saved = CartStore.getAll().filter(function (p) {
+      return p.service_id === SERVICE_ID;
+    })[0];
+    if (saved && saved.calc_state) {
+      var st = saved.calc_state;
+      Object.keys(st.radios || {}).forEach(function (name) {
+        var val = st.radios[name];
+        document.querySelectorAll(
+          '.calc-options input[type="radio"][name="' + name + '"]'
+        ).forEach(function (inp) {
+          if (inp.value === val) { inp.checked = true; inp.dispatchEvent(new Event('change')); }
+        });
+      });
+      Object.keys(st.checkboxes || {}).forEach(function (name) {
+        var vals = st.checkboxes[name] || [];
+        document.querySelectorAll(
+          '.calc-options input[type="checkbox"][name="' + name + '"]'
+        ).forEach(function (inp) {
+          inp.checked = vals.indexOf(inp.value) >= 0;
+          inp.dispatchEvent(new Event('change'));
+        });
+      });
+    }
+
+    // Save to cart and navigate on CTA click
+    document.getElementById('calc-cta-link').addEventListener('click', function (e) {
+      e.preventDefault();
+      var priceEl = document.getElementById('calc-price');
+      var isOnReq = priceEl && (
+        priceEl.classList.contains('on-request') ||
+        /request|anfrage/i.test(priceEl.textContent)
+      );
+      var priceStr = priceEl ? priceEl.textContent.trim() : '';
+      var priceNum = isOnReq ? 0 : (parseInt(priceStr.replace(/[^0-9]/g, ''), 10) || 0);
+
+      var calcState = { radios: {}, checkboxes: {} };
+      document.querySelectorAll('.calc-options input[type="radio"]:checked').forEach(function (inp) {
+        calcState.radios[inp.name] = inp.value;
+      });
+      document.querySelectorAll('.calc-options input[type="checkbox"]').forEach(function (inp) {
+        if (!calcState.checkboxes[inp.name]) calcState.checkboxes[inp.name] = [];
+        if (inp.checked) calcState.checkboxes[inp.name].push(inp.value);
+      });
+
+      CartStore.save({
+        service_id: SERVICE_ID, service_name_en: NAME_EN, service_name_de: NAME_DE,
+        service_url: SERVICE_URL, total_price_num: priceNum, total_price_str: priceStr,
+        is_on_request: isOnReq, calc_state: calcState
+      });
+      window.location.href = 'kontakt.html';
+    });
   })();
   </script>
 

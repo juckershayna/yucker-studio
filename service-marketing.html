@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>(function(){var l=localStorage.getItem('studio-lang');if(l&&l!=='en'){document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l);}})();</script>
   <title>Marketing &amp; Social Media — aly + shay Studio</title>
   <meta name="description" content="Strategic, creative social media management and marketing campaigns for your brand." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -100,7 +101,7 @@
         </div>
       </section>
 
-      <section class="calc-section">
+      <section class="calc-section" id="calculator">
         <div class="container">
           <div class="calc-section-head">
             <span class="eyebrow reveal"><span class="en">Price Calculator</span><span class="de">Preisrechner</span></span>
@@ -118,31 +119,31 @@
                 <span class="calc-group-title"><span class="en">Service type</span><span class="de">Leistungsart</span></span>
 
                 <label class="calc-opt">
-                  <input type="radio" name="service" value="600" data-type="once" data-label-en="Strategy &amp; Concept (one-time)" data-label-de="Strategie &amp; Konzept (einmalig)" />
+                  <input type="radio" name="service" value="900" data-type="once" data-label-en="Strategy &amp; Concept (one-time)" data-label-de="Strategie &amp; Konzept (einmalig)" />
                   <span class="calc-opt-left"><span class="calc-opt-indicator"></span>
                     <span class="opt-label"><span class="en">Strategy &amp; Concept</span><span class="de">Strategie &amp; Konzept</span></span></span>
-                  <span class="opt-price">CHF 600</span>
+                  <span class="opt-price">CHF 900</span>
                 </label>
 
                 <label class="calc-opt">
-                  <input type="radio" name="service" value="700" data-type="monthly" data-label-en="Content creation (monthly)" data-label-de="Content-Erstellung (monatlich)" checked />
+                  <input type="radio" name="service" value="1500" data-type="monthly" data-label-en="Content creation (monthly)" data-label-de="Content-Erstellung (monatlich)" checked />
                   <span class="calc-opt-left"><span class="calc-opt-indicator"></span>
                     <span class="opt-label"><span class="en">Content creation</span><span class="de">Content-Erstellung</span></span></span>
-                  <span class="opt-price">CHF 700<span class="opt-price-unit">/mo</span></span>
+                  <span class="opt-price">CHF 1,500<span class="opt-price-unit">/mo</span></span>
                 </label>
 
                 <label class="calc-opt">
-                  <input type="radio" name="service" value="500" data-type="monthly" data-label-en="Community management (monthly)" data-label-de="Community-Management (monatlich)" />
+                  <input type="radio" name="service" value="1100" data-type="monthly" data-label-en="Community management (monthly)" data-label-de="Community-Management (monatlich)" />
                   <span class="calc-opt-left"><span class="calc-opt-indicator"></span>
                     <span class="opt-label"><span class="en">Community management</span><span class="de">Community-Management</span></span></span>
-                  <span class="opt-price">CHF 500<span class="opt-price-unit">/mo</span></span>
+                  <span class="opt-price">CHF 1,100<span class="opt-price-unit">/mo</span></span>
                 </label>
 
                 <label class="calc-opt">
-                  <input type="radio" name="service" value="1400" data-type="monthly" data-label-en="Full service (monthly)" data-label-de="Vollservice (monatlich)" />
+                  <input type="radio" name="service" value="2500" data-type="monthly" data-label-en="Full service (monthly)" data-label-de="Vollservice (monatlich)" />
                   <span class="calc-opt-left"><span class="calc-opt-indicator"></span>
                     <span class="opt-label"><span class="en">Full service</span><span class="de">Vollservice</span></span></span>
-                  <span class="opt-price">CHF 1,400<span class="opt-price-unit">/mo</span></span>
+                  <span class="opt-price">CHF 2,500<span class="opt-price-unit">/mo</span></span>
                 </label>
               </div>
 
@@ -210,14 +211,14 @@
             <div class="calc-result" id="calc-result">
               <div class="calc-result-head">
                 <span class="calc-result-eyebrow"><span class="en">Estimated Investment</span><span class="de">Geschätztes Investment</span></span>
-                <div class="calc-price-big" id="calc-price">CHF 700</div>
+                <div class="calc-price-big" id="calc-price">CHF 1,500</div>
                 <div class="calc-price-note" id="calc-price-note"></div>
               </div>
               <div class="calc-divider"></div>
               <div class="calc-breakdown" id="calc-breakdown"></div>
               <div class="calc-divider"></div>
               <div class="calc-cta">
-                <a href="kontakt.html" class="btn btn-primary">
+                <a id="calc-cta-link" href="kontakt.html" class="btn btn-primary">
                   <span class="en">Start Your Project</span><span class="de">Projekt starten</span>
                   <span class="arrow">→</span>
                 </a>
@@ -279,7 +280,7 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <span>© MMXXVI aly + shay Studio</span>
+          <span>© aly + shay Studio</span>
           <div class="right">
             <span data-clock>—</span>
             <a href="impressum.html">Impressum</a>
@@ -292,6 +293,7 @@
   </div>
   <script src="shared.js"></script>
   <script src="i18n.js"></script>
+  <script src="cart.js"></script>
   <script>
   (function () {
     function getLang() { return document.documentElement.getAttribute('data-lang') || 'en'; }
@@ -338,9 +340,88 @@
         ? '<span class="en">per month, excl. VAT</span><span class="de">pro Monat, exkl. MwSt.</span>'
         : '<span class="en">one-time, excl. VAT</span><span class="de">einmalig, exkl. MwSt.</span>';
     }
-    document.querySelectorAll('input[name="service"], input[name="channels"], input[name="duration"]').forEach(function(inp) { inp.addEventListener('change', calculate); });
-    document.addEventListener('langchange', calculate);
+    function updateCtaLink() {
+      var ctaLink = document.getElementById('calc-cta-link');
+      if (!ctaLink) return;
+      var l = getLang();
+      var params = new URLSearchParams();
+      params.set('service', 'marketing');
+      var sels = [];
+      document.querySelectorAll('.calc-options input:checked').forEach(function (inp) {
+        var label = l === 'de' ? (inp.getAttribute('data-label-de') || inp.getAttribute('data-label-en')) : (inp.getAttribute('data-label-en') || inp.getAttribute('data-label-de'));
+        if (label) sels.push(label);
+      });
+      if (sels.length) params.set('selections', sels.join('|'));
+      var priceEl = document.getElementById('calc-price');
+      if (priceEl) params.set('total', priceEl.textContent);
+      ctaLink.href = 'kontakt.html?' + params.toString();
+    }
+
+    document.querySelectorAll('input[name="service"], input[name="channels"], input[name="duration"]').forEach(function(inp) { inp.addEventListener('change', function () { calculate(); updateCtaLink(); }); });
+    document.addEventListener('langchange', function () { calculate(); updateCtaLink(); });
     calculate();
+    updateCtaLink();
+  })();
+  </script>
+
+  <script>
+  /* Cart integration — service-marketing */
+  (function () {
+    var SERVICE_ID  = 'marketing';
+    var NAME_EN     = 'Marketing & Social Media';
+    var NAME_DE     = 'Marketing & Social Media';
+    var SERVICE_URL = 'service-marketing.html';
+
+    var saved = CartStore.getAll().filter(function (p) {
+      return p.service_id === SERVICE_ID;
+    })[0];
+    if (saved && saved.calc_state) {
+      var st = saved.calc_state;
+      Object.keys(st.radios || {}).forEach(function (name) {
+        var val = st.radios[name];
+        document.querySelectorAll(
+          '.calc-options input[type="radio"][name="' + name + '"]'
+        ).forEach(function (inp) {
+          if (inp.value === val) { inp.checked = true; inp.dispatchEvent(new Event('change')); }
+        });
+      });
+      Object.keys(st.checkboxes || {}).forEach(function (name) {
+        var vals = st.checkboxes[name] || [];
+        document.querySelectorAll(
+          '.calc-options input[type="checkbox"][name="' + name + '"]'
+        ).forEach(function (inp) {
+          inp.checked = vals.indexOf(inp.value) >= 0;
+          inp.dispatchEvent(new Event('change'));
+        });
+      });
+    }
+
+    document.getElementById('calc-cta-link').addEventListener('click', function (e) {
+      e.preventDefault();
+      var priceEl = document.getElementById('calc-price');
+      var isOnReq = priceEl && (
+        priceEl.classList.contains('on-request') ||
+        /request|anfrage/i.test(priceEl.textContent)
+      );
+      var priceStr = priceEl ? priceEl.textContent.trim() : '';
+      var priceNum = isOnReq ? 0 : (parseInt(priceStr.replace(/[^0-9]/g, ''), 10) || 0);
+
+      var calcState = { radios: {}, checkboxes: {} };
+      document.querySelectorAll('.calc-options input[type="radio"]:checked').forEach(function (inp) {
+        calcState.radios[inp.name] = inp.value;
+      });
+      document.querySelectorAll('.calc-options input[type="checkbox"]').forEach(function (inp) {
+        if (!calcState.checkboxes[inp.name]) calcState.checkboxes[inp.name] = [];
+        if (inp.checked) calcState.checkboxes[inp.name].push(inp.value);
+      });
+
+      CartStore.save({
+        service_id: SERVICE_ID, service_name_en: NAME_EN, service_name_de: NAME_DE,
+        service_url: SERVICE_URL, total_price_num: priceNum, total_price_str: priceStr,
+        is_on_request: isOnReq, calc_state: calcState
+      });
+      window.location.href = 'kontakt.html';
+    });
   })();
   </script>
 </body>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 140" fill="none"
+  stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- J: vertical bar, curves at bottom-left -->
+  <line x1="32" y1="18" x2="32" y2="95"/>
+  <path d="M 32,95 Q 32,116 14,116"/>
+  <!-- small tick at bottom-left of J -->
+  <line x1="8" y1="116" x2="20" y2="116"/>
+  <!-- T: full-height vertical bar -->
+  <line x1="76" y1="18" x2="76" y2="118"/>
+  <!-- T: top horizontal bar extending right -->
+  <line x1="76" y1="18" x2="110" y2="18"/>
+</svg>
