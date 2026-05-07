@@ -10,11 +10,8 @@
 .hero::before {
   content: "";
   position: absolute;
-  top: -10%;
-  right: -10%;
-  width: 60%;
-  height: 80%;
-  background: radial-gradient(ellipse at center, rgba(149, 123, 95, 0.10), transparent 60%);
+  inset: 0;
+  background: radial-gradient(ellipse 60% 70% at 80% 15%, rgba(149, 123, 95, 0.10), transparent 100%);
   pointer-events: none;
   z-index: 0;
 }
