@@ -235,6 +235,25 @@ main {
   display: none;
 }
 
+/* Blur backdrop behind open mobile menu */
+.nav-backdrop {
+  position: fixed;
+  inset: 0;
+  top: 80px;
+  background: rgba(10, 10, 10, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 49;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s var(--ease);
+}
+
+body.menu-open .nav-backdrop {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .nav-drawer {
   display: none;
   position: fixed;

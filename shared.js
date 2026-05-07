@@ -35,6 +35,21 @@
   var nav = document.querySelector('.nav');
   if (!toggle || !nav) return;
 
+  // Backdrop overlay — blurs page content behind open menu
+  var backdrop = document.createElement('div');
+  backdrop.className = 'nav-backdrop';
+  document.body.appendChild(backdrop);
+
+  function openMenu() {
+    nav.classList.add('nav-open');
+    document.body.classList.add('menu-open');
+  }
+
+  function closeMenu() {
+    nav.classList.remove('nav-open');
+    document.body.classList.remove('menu-open');
+  }
+
   // Build mobile drawer from existing nav elements
   var drawer = document.createElement('div');
   drawer.className = 'nav-drawer';
@@ -81,20 +96,23 @@
   // Toggle open/close
   toggle.addEventListener('click', function (e) {
     e.stopPropagation();
-    nav.classList.toggle('nav-open');
+    nav.classList.contains('nav-open') ? closeMenu() : openMenu();
   });
+
+  // Close on backdrop click
+  backdrop.addEventListener('click', closeMenu);
 
   // Close on outside click
   document.addEventListener('click', function (e) {
-    if (nav.classList.contains('nav-open') && !nav.contains(e.target)) {
-      nav.classList.remove('nav-open');
+    if (nav.classList.contains('nav-open') && !nav.contains(e.target) && e.target !== backdrop) {
+      closeMenu();
     }
   });
 
   // Close on link click inside drawer (not lang buttons)
   drawer.addEventListener('click', function (e) {
     var link = e.target.closest('a');
-    if (link) nav.classList.remove('nav-open');
+    if (link) closeMenu();
   });
 
   // Sync lang active state when language changes
