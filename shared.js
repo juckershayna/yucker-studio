@@ -50,6 +50,7 @@
     document.body.classList.remove('menu-open');
   }
 
+
   // Build mobile drawer from existing nav elements
   var drawer = document.createElement('div');
   drawer.className = 'nav-drawer';
