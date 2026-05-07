@@ -10,11 +10,8 @@
 .hero::before {
   content: "";
   position: absolute;
-  top: -10%;
-  right: -10%;
-  width: 60%;
-  height: 80%;
-  background: radial-gradient(ellipse at center, rgba(149, 123, 95, 0.10), transparent 60%);
+  inset: 0;
+  background: radial-gradient(ellipse 60% 70% at 80% 15%, rgba(149, 123, 95, 0.10), transparent 100%);
   pointer-events: none;
   z-index: 0;
 }
@@ -119,6 +116,63 @@
 }
 
 /* IMAGE STRIP */
+/* CLIENTS MARQUEE */
+.clients {
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  padding: 44px 0;
+  overflow: hidden;
+}
+
+.clients-track-wrap {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
+}
+
+.clients-track {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  width: max-content;
+  animation: clients-scroll 30s linear infinite;
+}
+
+.clients-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes clients-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.client-logo {
+  display: inline-flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.35);
+  transition: color 0.35s var(--ease), transform 0.35s var(--ease);
+  flex-shrink: 0;
+}
+
+.client-logo svg {
+  display: block;
+  height: 28px;
+  width: auto;
+}
+
+.client-logo:hover {
+  color: var(--gold-soft);
+  transform: scale(1.12);
+}
+
+.client-sep {
+  color: var(--hairline-strong);
+  font-size: 20px;
+  flex-shrink: 0;
+  user-select: none;
+}
+
 .image-strip {
   padding-top: clamp(60px, 8vw, 100px);
   padding-bottom: clamp(60px, 8vw, 100px);
