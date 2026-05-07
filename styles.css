@@ -571,6 +571,47 @@ footer {
   }
 }
 
+@media (max-width: 580px) {
+  footer {
+    padding: 52px 0 32px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px 24px;
+  }
+
+  /* Tagline full width */
+  .footer-grid > div:first-child {
+    grid-column: 1 / -1;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  /* Contact full width */
+  .footer-grid > div:nth-child(3) {
+    grid-column: 1 / -1;
+    padding-top: 4px;
+    border-top: 1px solid var(--hairline);
+  }
+
+  .footer-tagline {
+    font-size: 22px;
+    max-width: none;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .footer-bottom .right {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+}
+
 .footer-grid h5 {
   font-family: var(--mono);
   font-size: 11px;
