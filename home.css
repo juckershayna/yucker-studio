@@ -120,22 +120,23 @@
 .clients {
   border-top: 1px solid var(--hairline);
   border-bottom: 1px solid var(--hairline);
-  padding: 44px 0;
+  padding: 40px 0;
   overflow: hidden;
 }
 
 .clients-track-wrap {
   overflow: hidden;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
-  mask-image: linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
 }
 
 .clients-track {
   display: flex;
   align-items: center;
-  gap: 56px;
+  gap: 64px;
   width: max-content;
-  animation: clients-scroll 30s linear infinite;
+  animation: clients-scroll 40s linear infinite;
+  will-change: transform;
 }
 
 .clients-track:hover {
@@ -149,28 +150,50 @@
 
 .client-logo {
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
-  color: rgba(255, 255, 255, 0.35);
+  gap: 10px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.3);
   transition: color 0.35s var(--ease), transform 0.35s var(--ease);
   flex-shrink: 0;
 }
 
-.client-logo svg {
+.client-logo-img {
   display: block;
-  height: 28px;
+  height: 56px;
   width: auto;
+  max-width: 110px;
+  object-fit: contain;
+  filter: invert(1) brightness(0.4);
+  transition: filter 0.35s var(--ease);
+}
+
+.client-logo-name {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: inherit;
+  white-space: nowrap;
 }
 
 .client-logo:hover {
   color: var(--gold-soft);
-  transform: scale(1.12);
+  transform: scale(1.1);
+}
+
+.client-logo:hover .client-logo-img {
+  filter: invert(1) sepia(1) saturate(1.5) hue-rotate(5deg) brightness(0.85);
 }
 
 .client-sep {
   color: var(--hairline-strong);
-  font-size: 20px;
+  font-size: 18px;
   flex-shrink: 0;
   user-select: none;
+  align-self: center;
 }
 
 .image-strip {

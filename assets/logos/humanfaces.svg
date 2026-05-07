@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 180" fill="none">
+  <!-- Abstract geometric low-poly face mark -->
+  <!-- Head outline polygon -->
+  <polygon points="80,10 130,50 120,130 80,155 40,130 30,50"
+    stroke="currentColor" stroke-width="3" fill="none" opacity="0.8"/>
+  <!-- Left eye triangle -->
+  <polygon points="55,70 65,58 70,72" fill="currentColor" opacity="0.7"/>
+  <!-- Right eye triangle -->
+  <polygon points="90,72 95,58 105,70" fill="currentColor" opacity="0.7"/>
+  <!-- Nose line -->
+  <path d="M 80,78 L 74,102 L 86,102" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" fill="none"/>
+  <!-- Subtle cheekbone lines -->
+  <line x1="38" y1="75" x2="58" y2="88" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+  <line x1="122" y1="75" x2="102" y2="88" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+  <!-- "HUMAN FACES" label -->
+  <text x="80" y="175"
+    font-family="'Helvetica Neue',Helvetica,Arial,sans-serif"
+    font-size="9" font-weight="300" letter-spacing="3"
+    fill="currentColor" text-anchor="middle">HUMAN FACES</text>
+</svg>
