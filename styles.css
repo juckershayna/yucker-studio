@@ -600,14 +600,6 @@ footer {
   color: var(--gold);
 }
 
-.footer-download {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  opacity: 0.6;
-}
-
 .footer-tagline {
   font-family: var(--serif);
   font-size: 32px;
