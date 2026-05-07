@@ -237,8 +237,8 @@ main {
 
 .nav-drawer {
   display: none;
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 80px;
   left: 0;
   right: 0;
   background: rgba(10, 10, 10, 0.97);
@@ -248,7 +248,7 @@ main {
   padding: 24px var(--pad) 32px;
   flex-direction: column;
   gap: 28px;
-  z-index: 49;
+  z-index: 51;
 }
 
 .nav-drawer-links {
