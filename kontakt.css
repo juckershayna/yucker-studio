@@ -245,7 +245,7 @@
   pointer-events: none;
 }
 
-.chip span {
+.chip > span {
   display: inline-block;
   padding: 10px 20px;
   font-family: var(--mono);
@@ -258,7 +258,7 @@
   transition: all 0.3s var(--ease);
 }
 
-.chip:hover span {
+.chip:hover > span {
   color: var(--fg);
   border-color: var(--fg-muted);
 }
@@ -294,7 +294,7 @@
   .chip-row {
     gap: 8px;
   }
-  .chip span {
+  .chip > span {
     padding: 8px 14px;
     font-size: 10px;
   }
