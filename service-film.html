@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>(function(){var l=localStorage.getItem('studio-lang');if(l&&l!=='en'){document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l);}})();</script>
   <title>Film &amp; Video — aly + shay Studio</title>
   <meta name="description" content="Short, modern videos for brands, products, and social media. From storyboard to final cut." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -236,7 +237,7 @@
               <div class="calc-breakdown" id="calc-breakdown"></div>
               <div class="calc-divider"></div>
               <div class="calc-cta">
-                <a href="kontakt.html" class="btn btn-primary">
+                <a id="calc-cta-link" href="kontakt.html" class="btn btn-primary">
                   <span class="en">Start Your Project</span><span class="de">Projekt starten</span>
                   <span class="arrow">→</span>
                 </a>
@@ -298,7 +299,7 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <span>© MMXXVI aly + shay Studio</span>
+          <span>© aly + shay Studio</span>
           <div class="right">
             <span data-clock>—</span>
             <a href="impressum.html">Impressum</a>
@@ -357,9 +358,27 @@
       priceEl.textContent = fmt(total);
       noteEl.innerHTML = '<span class="en">Starting from</span><span class="de">Ab</span>';
     }
-    document.querySelectorAll('input[name="format"], input[name="addon"], input[name="revisions"], input[name="delivery"]').forEach(function(inp) { inp.addEventListener('change', calculate); });
-    document.addEventListener('langchange', calculate);
+    function updateCtaLink() {
+      var ctaLink = document.getElementById('calc-cta-link');
+      if (!ctaLink) return;
+      var l = getLang();
+      var params = new URLSearchParams();
+      params.set('service', 'film');
+      var sels = [];
+      document.querySelectorAll('.calc-options input:checked').forEach(function (inp) {
+        var label = l === 'de' ? (inp.getAttribute('data-label-de') || inp.getAttribute('data-label-en')) : (inp.getAttribute('data-label-en') || inp.getAttribute('data-label-de'));
+        if (label) sels.push(label);
+      });
+      if (sels.length) params.set('selections', sels.join('|'));
+      var priceEl = document.getElementById('calc-price');
+      if (priceEl) params.set('total', priceEl.textContent);
+      ctaLink.href = 'kontakt.html?' + params.toString();
+    }
+
+    document.querySelectorAll('input[name="format"], input[name="addon"], input[name="revisions"], input[name="delivery"]').forEach(function(inp) { inp.addEventListener('change', function () { calculate(); updateCtaLink(); }); });
+    document.addEventListener('langchange', function () { calculate(); updateCtaLink(); });
     calculate();
+    updateCtaLink();
   })();
   </script>
 </body>

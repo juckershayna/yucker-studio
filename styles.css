@@ -113,6 +113,18 @@ main {
   align-items: center;
   justify-content: space-between;
   height: 80px;
+  position: relative;
+}
+
+.nav-inner > nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.nav-inner > nav * {
+  pointer-events: auto;
 }
 
 .logo {
@@ -223,20 +235,97 @@ main {
   display: none;
 }
 
+.nav-drawer {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(10, 10, 10, 0.97);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--hairline);
+  padding: 24px var(--pad) 32px;
+  flex-direction: column;
+  gap: 28px;
+  z-index: 49;
+}
+
+.nav-drawer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+}
+
+.nav-drawer-links li a {
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  display: block;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--hairline);
+  transition: color 0.3s var(--ease);
+}
+
+.nav-drawer-links li a:hover,
+.nav-drawer-links li a.active {
+  color: var(--gold);
+}
+
+.nav-drawer-links li a.active::before {
+  display: none;
+}
+
+.nav-drawer .nav-cta {
+  display: inline-flex !important;
+  align-self: flex-start;
+}
+
+.nav-drawer-lang {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
 @media (max-width: 860px) {
   .nav-links, .nav-cta {
     display: none;
+  }
+  .nav-inner > nav {
+    position: static;
+    transform: none;
+    pointer-events: auto;
   }
   .menu-toggle {
     display: flex;
     flex-direction: column;
     gap: 4px;
     padding: 8px;
+    cursor: pointer;
   }
   .menu-toggle span {
     width: 22px;
     height: 1px;
     background: var(--fg);
+    transition: transform 0.3s var(--ease), opacity 0.2s var(--ease);
+    display: block;
+  }
+  .nav.nav-open .menu-toggle span:nth-child(1) {
+    transform: translateY(5px) rotate(45deg);
+  }
+  .nav.nav-open .menu-toggle span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  .nav.nav-open .menu-toggle span:nth-child(3) {
+    transform: translateY(-5px) rotate(-45deg);
+  }
+  .nav.nav-open .nav-drawer {
+    display: flex;
   }
 }
 
@@ -477,6 +566,10 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+.footer-grid li {
+  color: var(--fg-muted);
 }
 
 .footer-grid a {
