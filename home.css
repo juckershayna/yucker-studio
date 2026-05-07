@@ -161,23 +161,9 @@
   width: auto;
 }
 
-.client-logo img {
-  display: block;
-  height: 28px;
-  width: auto;
-  filter: brightness(0) invert(1);
-  opacity: 0.35;
-  transition: opacity 0.35s var(--ease), filter 0.35s var(--ease);
-}
-
 .client-logo:hover {
   color: var(--gold-soft);
   transform: scale(1.12);
-}
-
-.client-logo:hover img {
-  opacity: 1;
-  filter: brightness(0) sepia(1) saturate(1.8) hue-rotate(-8deg) brightness(1.2);
 }
 
 .client-sep {

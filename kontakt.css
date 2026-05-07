@@ -264,8 +264,7 @@
 }
 
 .chip input:checked + span {
-  background: var(--gold);
-  color: var(--bg);
+  color: var(--gold);
   border-color: var(--gold);
 }
 
