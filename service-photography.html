@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>(function(){var l=localStorage.getItem('studio-lang');if(l&&l!=='en'){document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l);}})();</script>
   <title>Photography — aly + shay Studio</title>
   <meta name="description" content="Professional, emotive photography for websites, campaigns and social media. Portrait, product, architecture." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -264,7 +265,7 @@
               <div class="calc-breakdown" id="calc-breakdown"></div>
               <div class="calc-divider"></div>
               <div class="calc-cta">
-                <a href="kontakt.html" class="btn btn-primary">
+                <a id="calc-cta-link" href="kontakt.html" class="btn btn-primary">
                   <span class="en">Book a Session</span><span class="de">Session buchen</span>
                   <span class="arrow">→</span>
                 </a>
@@ -333,7 +334,7 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <span>© MMXXVI aly + shay Studio</span>
+          <span>© aly + shay Studio</span>
           <div class="right">
             <span data-clock>—</span>
             <a href="impressum.html">Impressum</a>
@@ -390,11 +391,29 @@
       noteEl.innerHTML = '<span class="en">Starting from</span><span class="de">Ab</span>';
     }
 
+    function updateCtaLink() {
+      var ctaLink = document.getElementById('calc-cta-link');
+      if (!ctaLink) return;
+      var l = getLang();
+      var params = new URLSearchParams();
+      params.set('service', 'photography');
+      var sels = [];
+      document.querySelectorAll('.calc-options input:checked').forEach(function (inp) {
+        var label = l === 'de' ? (inp.getAttribute('data-label-de') || inp.getAttribute('data-label-en')) : (inp.getAttribute('data-label-en') || inp.getAttribute('data-label-de'));
+        if (label) sels.push(label);
+      });
+      if (sels.length) params.set('selections', sels.join('|'));
+      var priceEl = document.getElementById('calc-price');
+      if (priceEl) params.set('total', priceEl.textContent);
+      ctaLink.href = 'kontakt.html?' + params.toString();
+    }
+
     document.querySelectorAll('input[name="duration"], input[name="editing"], input[name="delivery"]').forEach(function (inp) {
-      inp.addEventListener('change', calculate);
+      inp.addEventListener('change', function () { calculate(); updateCtaLink(); });
     });
-    document.addEventListener('langchange', calculate);
+    document.addEventListener('langchange', function () { calculate(); updateCtaLink(); });
     calculate();
+    updateCtaLink();
   })();
   </script>
 

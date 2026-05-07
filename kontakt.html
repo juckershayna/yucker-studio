@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>(function(){var l=localStorage.getItem('studio-lang');if(l&&l!=='en'){document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l);}})();</script>
   <title>Contact — aly + shay Studio</title>
   <meta name="description" content="Get in touch with aly + shay Studio — we look forward to your project." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -53,6 +54,19 @@
           </p>
         </div>
       </section>
+
+      <!-- PROJECT SUMMARY (filled dynamically from service page URL params) -->
+      <div id="project-summary" class="project-summary" style="display:none">
+        <div class="container">
+          <div class="project-summary-inner">
+            <div class="project-summary-label">
+              <span class="en">Your selection</span><span class="de">Deine Auswahl</span>
+            </div>
+            <div id="project-summary-items" class="project-summary-items"></div>
+            <div id="project-summary-total" class="project-summary-total"></div>
+          </div>
+        </div>
+      </div>
 
       <section class="kontakt-body">
         <div class="container kontakt-grid">
@@ -185,7 +199,7 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <span>© MMXXVI aly + shay Studio</span>
+          <span>© aly + shay Studio</span>
           <div class="right">
             <span data-clock>—</span>
             <a href="impressum.html">Impressum</a>
@@ -228,6 +242,41 @@
         const foot = form.querySelector('.form-foot');
         foot.innerHTML = '<p class="form-thanks">Danke — deine Nachricht ist bei uns. Wir melden uns bald.</p>';
       });
+    })();
+  </script>
+  <script>
+    // Read URL params from service page price calculator and show summary
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var service = params.get('service');
+      var selections = params.get('selections');
+      var total = params.get('total');
+      if (!service) return;
+
+      // Pre-select service chip in form
+      var serviceToChip = { branding: 'branding', web: 'web', photography: 'foto', film: 'film', marketing: 'marketing', interior: 'interior' };
+      var chipVal = serviceToChip[service];
+      if (chipVal) {
+        var chipInput = document.querySelector('.chip input[value="' + chipVal + '"]');
+        if (chipInput) chipInput.checked = true;
+      }
+
+      // Show summary panel
+      var summary = document.getElementById('project-summary');
+      var itemsEl = document.getElementById('project-summary-items');
+      var totalEl = document.getElementById('project-summary-total');
+      if (!summary || !itemsEl) return;
+
+      var lang = document.documentElement.getAttribute('data-lang') || 'en';
+      var html = '';
+      if (selections) {
+        selections.split('|').forEach(function (sel) {
+          if (sel.trim()) html += '<span class="project-summary-item">— ' + sel.trim() + '</span>';
+        });
+      }
+      itemsEl.innerHTML = html;
+      if (total && totalEl) totalEl.textContent = total;
+      summary.style.display = 'block';
     })();
   </script>
 </body>

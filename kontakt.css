@@ -1,5 +1,57 @@
 /* KONTAKT */
 
+/* Project summary (from service page price calculator) */
+.project-summary {
+  background: var(--bg-elev);
+  border-bottom: 1px solid var(--hairline);
+  padding: 20px 0;
+}
+
+.project-summary-inner {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px 32px;
+}
+
+.project-summary-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.project-summary-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
+.project-summary-item {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--fg-muted);
+  text-transform: uppercase;
+}
+
+.project-summary-total {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--gold-soft);
+  font-weight: 500;
+  margin-left: auto;
+}
+
+@media (max-width: 700px) {
+  .project-summary-total {
+    margin-left: 0;
+  }
+}
+
 .kontakt-head {
   padding-top: clamp(80px, 10vw, 140px);
   padding-bottom: clamp(60px, 8vw, 100px);
@@ -222,10 +274,31 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 32px;
+  gap: 24px;
   padding-top: 24px;
   border-top: 1px solid var(--hairline);
   flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .form-foot {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .form-foot .btn {
+    justify-content: center;
+    width: 100%;
+  }
+  .form-note {
+    max-width: 100%;
+  }
+  .chip-row {
+    gap: 8px;
+  }
+  .chip span {
+    padding: 8px 14px;
+    font-size: 10px;
+  }
 }
 
 .form-note {
