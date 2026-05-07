@@ -588,14 +588,7 @@ footer {
     border-bottom: 1px solid var(--hairline);
   }
 
-  /* Contact full width */
-  .footer-grid > div:nth-child(3) {
-    grid-column: 1 / -1;
-    padding-top: 4px;
-    border-top: 1px solid var(--hairline);
-  }
-
-  .footer-tagline {
+.footer-tagline {
     font-size: 22px;
     max-width: none;
   }
