@@ -204,6 +204,28 @@
   align-self: center;
 }
 
+@media (max-width: 700px) {
+  .clients {
+    padding: 48px 0;
+  }
+  .clients-track-wrap {
+    padding: 14px 0;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%);
+  }
+  .clients-track {
+    gap: 48px;
+    animation-duration: 28s;
+  }
+  .client-logo-img {
+    height: 52px;
+    max-width: 100px;
+  }
+  .client-logo:hover {
+    transform: scale(1.12);
+  }
+}
+
 .image-strip {
   padding-top: clamp(60px, 8vw, 100px);
   padding-bottom: clamp(60px, 8vw, 100px);
