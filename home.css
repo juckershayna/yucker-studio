@@ -120,25 +120,33 @@
 .clients {
   border-top: 1px solid var(--hairline);
   border-bottom: 1px solid var(--hairline);
-  padding: 40px 0;
+  padding: 64px 0;
   overflow: hidden;
 }
 
 .clients-track-wrap {
-  overflow: hidden;
+  overflow: visible;
+  padding: 20px 0;
+  cursor: grab;
+  user-select: none;
   -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
   mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+}
+
+.clients-track-wrap:active {
+  cursor: grabbing;
 }
 
 .clients-track {
   display: flex;
   align-items: center;
-  gap: 64px;
+  gap: 80px;
   width: max-content;
-  animation: clients-scroll 40s linear infinite;
+  animation: clients-scroll 36s linear infinite;
   will-change: transform;
 }
 
+.clients-track.is-dragging,
 .clients-track:hover {
   animation-play-state: paused;
 }
@@ -161,11 +169,11 @@
 
 .client-logo-img {
   display: block;
-  height: 56px;
+  height: 76px;
   width: auto;
-  max-width: 110px;
+  max-width: 150px;
   object-fit: contain;
-  filter: grayscale(100%) opacity(0.55);
+  filter: grayscale(1) invert(1) brightness(0.85) opacity(0.65);
   transition: filter 0.35s var(--ease);
 }
 
@@ -181,11 +189,11 @@
 
 .client-logo:hover {
   color: var(--gold-soft);
-  transform: scale(1.1);
+  transform: scale(1.18);
 }
 
 .client-logo:hover .client-logo-img {
-  filter: grayscale(0%) sepia(70%) saturate(250%) hue-rotate(5deg) brightness(1.05);
+  filter: grayscale(1) sepia(1) saturate(2.2) brightness(1.15) opacity(1);
 }
 
 .client-sep {

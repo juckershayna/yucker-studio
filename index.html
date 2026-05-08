@@ -398,5 +398,52 @@
 
   <script src="shared.js"></script>
   <script src="i18n.js"></script>
+  <script>
+  /* Logo strip — drag to scroll */
+  (function () {
+    var wrap  = document.querySelector('.clients-track-wrap');
+    var track = document.querySelector('.clients-track');
+    if (!wrap || !track) return;
+
+    var dragging = false, startX = 0, startTx = 0;
+
+    function getTx() {
+      var m = new DOMMatrix(getComputedStyle(track).transform);
+      return m.m41;
+    }
+
+    function beginDrag(clientX) {
+      dragging  = true;
+      startX    = clientX;
+      startTx   = getTx();
+      track.classList.add('is-dragging');
+      track.style.transform = 'translateX(' + startTx + 'px)';
+    }
+
+    function onDrag(clientX) {
+      if (!dragging) return;
+      var half = track.scrollWidth / 2;
+      var nx   = startTx + (clientX - startX);
+      if (nx > 0)      nx -= half;
+      if (nx < -half)  nx += half;
+      track.style.transform = 'translateX(' + nx + 'px)';
+    }
+
+    function endDrag() {
+      if (!dragging) return;
+      dragging = false;
+      track.classList.remove('is-dragging');
+      track.style.transform = '';
+    }
+
+    wrap.addEventListener('mousedown',  function (e) { beginDrag(e.clientX); e.preventDefault(); });
+    window.addEventListener('mousemove', function (e) { onDrag(e.clientX); });
+    window.addEventListener('mouseup',   endDrag);
+
+    wrap.addEventListener('touchstart', function (e) { beginDrag(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('touchmove', function (e) { if (dragging) onDrag(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('touchend',  endDrag);
+  })();
+  </script>
 </body>
 </html>
