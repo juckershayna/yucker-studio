@@ -408,14 +408,18 @@
     var dragging = false, startX = 0, startTx = 0;
 
     function getTx() {
-      var m = new DOMMatrix(getComputedStyle(track).transform);
-      return m.m41;
+      if (track.style.transform) {
+        var m = track.style.transform.match(/translateX\(([-\d.]+)px\)/);
+        if (m) return parseFloat(m[1]);
+      }
+      var mat = new DOMMatrix(getComputedStyle(track).transform);
+      return isNaN(mat.m41) ? 0 : mat.m41;
     }
 
     function beginDrag(clientX) {
-      dragging  = true;
-      startX    = clientX;
-      startTx   = getTx();
+      dragging = true;
+      startX   = clientX;
+      startTx  = getTx();
       track.classList.add('is-dragging');
       track.style.transform = 'translateX(' + startTx + 'px)';
     }
@@ -423,24 +427,38 @@
     function onDrag(clientX) {
       if (!dragging) return;
       var half = track.scrollWidth / 2;
-      var nx   = startTx + (clientX - startX);
-      if (nx > 0)      nx -= half;
-      if (nx < -half)  nx += half;
+      var nx = startTx + (clientX - startX);
+      if (nx > 0)     nx -= half;
+      if (nx < -half) nx += half;
       track.style.transform = 'translateX(' + nx + 'px)';
     }
 
     function endDrag() {
       if (!dragging) return;
       dragging = false;
+
+      var currentX = getTx();
+      var half     = track.scrollWidth / 2;
+      while (currentX > 0)     currentX -= half;
+      while (currentX < -half) currentX += half;
+
+      var duration = parseFloat(getComputedStyle(track).animationDuration) || 36;
+      var delay    = -(-currentX / half) * duration;
+
       track.classList.remove('is-dragging');
       track.style.transform = '';
+      /* Restart CSS animation from the drag-end position */
+      track.style.animation = 'none';
+      void track.offsetHeight;
+      track.style.animation      = '';
+      track.style.animationDelay = delay + 's';
     }
 
-    wrap.addEventListener('mousedown',  function (e) { beginDrag(e.clientX); e.preventDefault(); });
-    window.addEventListener('mousemove', function (e) { onDrag(e.clientX); });
+    wrap.addEventListener('mousedown',   function (e) { beginDrag(e.clientX); e.preventDefault(); });
+    window.addEventListener('mousemove', function (e) { if (dragging) onDrag(e.clientX); });
     window.addEventListener('mouseup',   endDrag);
 
-    wrap.addEventListener('touchstart', function (e) { beginDrag(e.touches[0].clientX); }, { passive: true });
+    wrap.addEventListener('touchstart',  function (e) { beginDrag(e.touches[0].clientX); }, { passive: true });
     window.addEventListener('touchmove', function (e) { if (dragging) onDrag(e.touches[0].clientX); }, { passive: true });
     window.addEventListener('touchend',  endDrag);
   })();

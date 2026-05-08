@@ -193,7 +193,7 @@
 }
 
 .client-logo:hover .client-logo-img {
-  filter: grayscale(1) sepia(1) saturate(2.2) brightness(1.15) opacity(1);
+  filter: grayscale(1) sepia(0.75) brightness(1.12) opacity(1);
 }
 
 .client-sep {
