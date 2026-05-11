@@ -71,9 +71,9 @@
   aspect-ratio: 4 / 5;
   width: 68%;
   margin-bottom: 28px;
-  transition: filter 0.5s var(--ease), transform 0.5s var(--ease);
   overflow: hidden;
   position: relative;
+  border: none;
 }
 
 .member-photo img {
@@ -82,10 +82,13 @@
   object-fit: cover;
   object-position: center top;
   display: block;
+  transition: transform 0.7s var(--ease), filter 0.7s var(--ease);
+  will-change: transform;
 }
 
-.member:hover .member-photo {
-  filter: brightness(1.08);
+.member:hover .member-photo img {
+  transform: scale(1.05);
+  filter: brightness(1.06) contrast(1.04);
 }
 
 .member-num {
