@@ -107,7 +107,7 @@
             </a>
             <span class="client-sep" aria-hidden="true">·</span>
             <a href="https://www.memora-moments.ch/" target="_blank" rel="noopener noreferrer" class="client-logo" aria-label="Memora Moments">
-              <img src="assets/logos/memora-moments.svg" class="client-logo-img" alt="Memora Moments">
+              <img src="assets/logos/memora-moments.jpg" class="client-logo-img" alt="Memora Moments">
               <span class="client-logo-name">Memora Moments</span>
             </a>
             <span class="client-sep" aria-hidden="true">·</span>
@@ -139,7 +139,7 @@
             </a>
             <span class="client-sep" aria-hidden="true">·</span>
             <a href="https://www.memora-moments.ch/" target="_blank" rel="noopener noreferrer" class="client-logo" aria-label="Memora Moments">
-              <img src="assets/logos/memora-moments.svg" class="client-logo-img" alt="Memora Moments">
+              <img src="assets/logos/memora-moments.jpg" class="client-logo-img" alt="Memora Moments">
               <span class="client-logo-name">Memora Moments</span>
             </a>
             <span class="client-sep" aria-hidden="true">·</span>
@@ -263,7 +263,7 @@
               </p>
               <p class="service-body">
                 <span class="en">We produce short, modern videos for brands, products, and social media. From storyboard through shoot to edit — with an eye for detail and a feeling for atmosphere.</span>
-                <span class="de">Wir produzieren kurze, moderne Videos für Marken, Produkte und Social Media. Vom Storyboard über den Dreh bis zum Schnitt — mit einem Auge für Details und einem Gespür für Atmosphäre.</span>
+                <span class="de">Wir produzieren kurze, moderne Videos für Marken, Produkte und Social Media. Vom Storyboard über den Dreh bis zum Schnitt — mit einem Auge für Details und einem Gespur für Atmosphäre.</span>
               </p>
               <a href="service-film.html" class="service-more"><span class="en">Learn more</span><span class="de">Mehr erfahren</span> <span class="arrow">→</span></a>
             </article>
@@ -409,7 +409,7 @@
 
     function getTx() {
       if (track.style.transform) {
-        var m = track.style.transform.match(/translateX\(([-\d.]+)px\)/);
+        var m = track.style.transform.match(/translateX\(([\-\d.]+)px\)/);
         if (m) return parseFloat(m[1]);
       }
       var mat = new DOMMatrix(getComputedStyle(track).transform);
