@@ -815,3 +815,23 @@ label:hover, select:hover,
 .info-social a:hover, .skills-list li:hover {
   cursor: url('y-cursor-hover.svg') 20 6, auto !important;
 }
+
+/* ---------- Back Button ---------- */
+
+.page-back {
+  padding: clamp(24px, 4vw, 48px) 0 0;
+}
+
+.page-back a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  transition: color 0.3s var(--ease);
+}
+
+.page-back a:hover { color: var(--gold); }
