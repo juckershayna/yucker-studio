@@ -26,12 +26,6 @@
 .portfolio-grid[data-layout="editorial"] .project.span-2 .project-media {
   aspect-ratio: 16 / 7;
 }
-.portfolio-grid[data-layout="editorial"] .project-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-}
 
 /* Salon — dense masonry-ish */
 .portfolio-grid[data-layout="salon"] {
@@ -291,7 +285,6 @@ body[data-hover="lift"] .project:hover { transform: translateY(-6px); }
 
 .project:hover .project-media::before { opacity: 1; }
 .project:hover .project-media::after { opacity: 1; transform: none; }
-.project:hover .project-media { transform: scale(1.01); }
 
 .project-meta {
   display: grid;
