@@ -252,12 +252,14 @@ body[data-hover="lift"] .project:hover { transform: translateY(-6px); }
 .project-media {
   position: relative;
   overflow: hidden;
+  aspect-ratio: 16 / 10;
   transition: transform 0.6s var(--ease);
 }
 
 .project-media img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
