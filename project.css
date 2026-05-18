@@ -142,7 +142,7 @@
   aspect-ratio: 16/10;
   overflow: hidden;
   border-radius: 3px;
-  background: var(--bg-elev);
+  background: transparent;
   cursor: pointer;
 }
 
