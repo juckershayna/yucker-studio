@@ -177,6 +177,15 @@
   transition: filter 0.35s var(--ease);
 }
 
+.client-logo-mark {
+  display: block;
+  width: 210px;
+  height: auto;
+  max-height: 76px;
+  color: rgba(245, 242, 236, 0.78);
+  transition: color 0.35s var(--ease);
+}
+
 .client-logo-name {
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   font-size: 10px;
@@ -194,6 +203,10 @@
 
 .client-logo:hover .client-logo-img {
   filter: invert(1) brightness(0.55) sepia(1);
+}
+
+.client-logo:hover .client-logo-mark {
+  color: var(--gold-soft);
 }
 
 .client-sep {
@@ -220,6 +233,10 @@
   .client-logo-img {
     height: 52px;
     max-width: 100px;
+  }
+  .client-logo-mark {
+    width: 140px;
+    max-height: 52px;
   }
   .client-logo:hover {
     transform: scale(1.12);
